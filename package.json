@@ -4,7 +4,7 @@
   "bin": {
     "nuktpls": "index.js"
   },
-  "description": "NÜktpls CLI tool",
+  "description": "NÜcolorize. Adding style, color, warnings, etc... to your console.log() or even for what? hmm what about your own CLI? You can do it - The Offspring",
   "main": "index.js",
   "files": [
     "index.js"
@@ -16,13 +16,19 @@
   },
   "keywords": [
     "nuktpls",
+		"nu-colorize",
     "milton bolonha",
-    "edu4dev"
+    "edu4dev",
+		"the-offspring"
   ],
+	"repository": {
+    "type": "git",
+		"url": "https://github.com/nuktpls/pimp-my-cli"
+	},
   "author": {
     "name": "Milton Bolonha",
     "email": "miltonbolonha@gmail.com",
-    "url": "https://twitter.com/bolonhadev"
+    "url": "https://twitter.com/miltonbolonha"
   },
   "license": "MIT",
   "dependencies": {

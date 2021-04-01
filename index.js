@@ -26,20 +26,15 @@ const chalk = require('chalk')
 const emoji = require('log-symbols')
 
 module.exports = options => {
-	let agent = null
-	let subAgent = null
+	if (!options) {
+		return `${chalk.red(' ' + emoji.error + ' : ')} ${chalk.red('!Error FATAL, cadê pô')}`
+	}
+	const agent = options.agent ? options.agent : null
+	const subAgent = options.subAgent ? options.subAgent : null
 	let color = null
 	let bold = null
 	let underline = null
 	let inverse = null
-
-	if (!options) {
-		if (!options.agent && !options.msg) {
-			return `${chalk.red(' ' + emoji.error + ' : ')} ${chalk.red('!Error FATAL, cadê pô')}`
-		}
-	}
-	agent = options.agent
-	subAgent = options.subAgent
 	if (options.style) {
 		color = options.style.color
 		bold = options.style.bold
@@ -48,7 +43,7 @@ module.exports = options => {
 	}
 
 	let customColor = chalk.white
-	if (agent === 'message') {
+	if (agent === 'message' || !subAgent || options.style) {
 		if (color === 'blue') {
 			customColor = chalk.blue
 		}
@@ -72,18 +67,17 @@ module.exports = options => {
 		}
 		return customColor
 	}
-	if (agent === 'alert') {
-		if (subAgent === 'error') {
-			return `${chalk.red(' ' + emoji.error + ' : ')} ${chalk.red('!Error')}`
-		}
-		if (subAgent === 'warning') {
-			return `${chalk.yellow(' ' + emoji.warning + ' : ')} ${chalk.yellow('Warning.')}`
-		}
-		if (subAgent === 'info') {
-			return `${chalk.blue(' ' + emoji.info + ' : ')} ${chalk.blue('Info:')}`
-		}
-		if (subAgent === 'success') {
-			return `${chalk.green(' ' + emoji.success + ' : ')} ${chalk.green('Success!!!')}`
-		}
+
+	if (subAgent === 'error') {
+		return `${chalk.red(' ' + emoji.error + ' : ')} ${chalk.red('!Error')}`
+	}
+	if (subAgent === 'warning') {
+		return `${chalk.yellow(' ' + emoji.warning + ' : ')} ${chalk.yellow('Warning.')}`
+	}
+	if (subAgent === 'info') {
+		return `${chalk.blue(' ' + emoji.info + ' : ')} ${chalk.blue('Info:')}`
+	}
+	if (subAgent === 'success') {
+		return `${chalk.green(' ' + emoji.success + ' : ')} ${chalk.green('Success!!!')}`
 	}
 }
