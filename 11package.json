@@ -1,0 +1,11 @@
+{
+  "name": "nu-colorize",
+  "version": "0.0.1",
+  "description": "Utils to colorize your CLI.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nuktpls <guruhide@gmail.com>",
+  "license": "ISC"
+}

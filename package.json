@@ -1,0 +1,36 @@
+{
+  "name": "nu-colorize",
+  "version": "0.0.1",
+  "bin": {
+    "nuktpls": "index.js"
+  },
+  "description": "NÜktpls CLI tool",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "node test.js",
+    "format": "prettier --write \"./**/*.{js,json\"}"
+  },
+  "keywords": [
+    "nuktpls",
+    "milton bolonha",
+    "edu4dev"
+  ],
+  "author": {
+    "name": "Milton Bolonha",
+    "email": "miltonbolonha@gmail.com",
+    "url": "https://twitter.com/bolonhadev"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "log-symbols": "^4.1.0"
+  },
+  "devDependencies": {
+    "clear-any-console": "^1.16.2",
+    "prettier": "^2.2.1"
+  }
+}
