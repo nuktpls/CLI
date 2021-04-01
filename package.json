@@ -1,5 +1,5 @@
 {
-  "name": "nu-colorize",
+  "name": "pimp-my-cli",
   "version": "0.0.1",
   "bin": {
     "nuktpls": "index.js"
@@ -16,7 +16,7 @@
   },
   "keywords": [
     "nuktpls",
-		"nu-colorize",
+		"pimp-my-cli",
     "milton bolonha",
     "edu4dev",
 		"the-offspring"
