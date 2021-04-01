@@ -2,12 +2,10 @@ const pimpMyCLI = require('./index')
 
 const message = pimpMyCLI({
 	style: {
-		color: 'green',
+		color: 'blue',
 		bold: true
-	}
+	},
+	browserExtension: true
 })
 
-console.log(message('Zumbamaster'))
-// browserExtension: true
-// browserExtension: true
-// browserExtension: true
+console.log('Zumbamaster', message)

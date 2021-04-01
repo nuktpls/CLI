@@ -35,39 +35,70 @@ module.exports = options => {
 	let bold = null
 	let underline = null
 	let inverse = null
+	let browserExtension = null
 	if (options.style) {
 		color = options.style.color
 		bold = options.style.bold
 		underline = options.style.underline
 		inverse = options.style.inverse
 	}
-
+	if (options.browserExtension) {
+		browserExtension = options.browserExtension
+	}
 	let customColor = chalk.white
 	if (agent === 'message' || !subAgent || options.style) {
 		if (color === 'blue') {
-			customColor = chalk.blue
+			if (!browserExtension) {
+				customColor = chalk.blue
+			} else {
+				customColor = 'color: blue'
+			}
 		}
 		if (color === 'green') {
-			customColor = chalk.green
+			if (!browserExtension) {
+				customColor = chalk.green
+			} else {
+				customColor = 'color: green'
+			}
 		}
 		if (color === 'yellow') {
-			customColor = chalk.yellow
+			if (!browserExtension) {
+				customColor = chalk.yellow
+			} else {
+				customColor = 'color: yellow'
+			}
 		}
 		if (color === 'red') {
-			customColor = chalk.red
+			if (!browserExtension) {
+				customColor = chalk.red
+			} else {
+				customColor = 'color: red'
+			}
 		}
 		if (bold) {
-			customColor = customColor.bold
+			if (!browserExtension) {
+				customColor = customColor.bold
+			} else {
+				customColor = customColor + '; font-weight: bold'
+			}
 		}
 		if (underline) {
-			customColor = customColor.underline
+			if (!browserExtension) {
+				customColor = customColor.underline
+			} else {
+				customColor = customColor + '; text-decoration: underline'
+			}
 		}
 		if (inverse) {
-			customColor = customColor.inverse
+			if (!browserExtension) {
+				customColor = customColor.inverse
+			} else {
+				customColor = 'background-color: ' + color + '; color: white; mix-blend-mode: difference;'
+			}
 		}
+
 		return customColor
 	}
-
 	if (subAgent === 'error') {
 		return `${chalk.red(' ' + emoji.error + ' : ')} ${chalk.red('!Error')}`
 	}
