@@ -7,4 +7,7 @@ const message = pimpMyCLI({
 	}
 })
 
-console.log(message('Xum'))
+console.log(message('Zumbamaster'))
+// browserExtension: true
+// browserExtension: true
+// browserExtension: true
