@@ -2,29 +2,29 @@
   "name": "pimp-my-cli",
   "version": "0.0.4",
   "bin": {
-    "nuktpls": "index.js"
+    "nuktpls": "test.js"
   },
-  "description": "NÜcolorize. Adding style, color, warnings, etc... to your console.log() or even for what? hmm what about your own CLI? You can do it - The Offspring",
-  "main": "index.js",
+  "description": "Get to now NÜktpls via `npx nuktpls`.",
+  "main": "test.js",
   "files": [
-    "index.js"
+    "test.js"
   ],
   "scripts": {
-    "start": "node ./index.js",
+    "start": "node ./test.js",
     "test": "node test.js",
     "format": "prettier --write \"./**/*.{js,json\"}"
   },
   "keywords": [
     "nuktpls",
-		"pimp-my-cli",
+    "pimp-my-cli",
     "milton bolonha",
     "edu4dev",
-		"the-offspring"
+    "the-offspring"
   ],
-	"repository": {
+  "repository": {
     "type": "git",
-		"url": "https://github.com/nuktpls/pimp-my-cli"
-	},
+    "url": "https://github.com/nuktpls/pimp-my-cli"
+  },
   "author": {
     "name": "Milton Bolonha",
     "email": "miltonbolonha@gmail.com",
@@ -33,7 +33,8 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.0",
-    "log-symbols": "^4.1.0"
+    "log-symbols": "^4.1.0",
+    "meow": "^9.0.0"
   },
   "devDependencies": {
     "clear-any-console": "^1.16.2",

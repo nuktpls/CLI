@@ -1,59 +1,89 @@
-const pimpMyCLI = require('./index')
+#!/usr/bin/env node
 const clearConsole = require('clear-any-console')
+const debug = require('./debug')
+const meow = require('meow')
+const {green, yellow, cyan, blue} = require('chalk')
+const init = require('./init')
+const chooseChapters = require('./chooseChapters')
 
-const messageGREEN = pimpMyCLI({
-	style: {
-		color: 'green'
-	}
-})
+const helpText = `
+	${blue(`Usage`)}
+		${green(`npx nuktpls`)} ${yellow(`[options]`)} ${yellow(`<command>`)}
 
-const messageYELLOW = pimpMyCLI({
-	style: {
-		color: 'yellow'
-	}
-})
+	${blue(`Options`)}
+		${yellow(`--debug`)},	${yellow(`-d`)}	${blue(`To print debug info's.`)}
+		${yellow(`--version`)},	${yellow(`-v`)}	${blue(`To print debug info's.`)}
+		${yellow(`--versão`)}		${blue(`To print debug info's.`)}
+		${yellow(`--clear`)},		${blue(`Clear the console.`)}
+		${yellow(`--no-clear`)},		${blue(`Don't clear the console.`)}
 
-const messageBLUE = pimpMyCLI({
-	style: {
-		color: 'blue'
-	}
-})
+	${blue(`Commands`)}
+		${cyan(`--welcome`)},	${cyan(`-w`)}	${blue(`To print debug info's.`)}
+		${cyan(`--chapter`)},	${cyan(`-c`)}	${blue(`--chapter="10" || -c 10 `)}
+		${cyan(`--help`)},		${cyan(`-h`)}	${blue(`Print CLI help informations.`)}
 
-const messageBLUEinverse = pimpMyCLI({
-	style: {
-		color: 'blue',
-		inverse: true
-	}
-})
-
-const log = console.log
-
-const nuTEIASbemvindo = `NÜ( U∅TE[i]AS ) 🐙`
-const breakLine = `
+	${blue(`Examples`)}
+		${green(`npx nuktpls`)} ${yellow(`--welcome`)}
+		${green(`npx nuktpls`)} ${yellow(`--no-warning`)}
 `
-const nuTERIASfecha = `🕸 <<</TE[i]AS>`
-const nuTEIASabre = `🕸 <TE[i]AS>>>`
-const nuMESSAGE = `
-    NÜktpls é o Deus do primeiro universo literário
-    e educacional cibernético do mundo.
-`
-const nuMESSAGElinks = `
-🐦 Twitter: http://twitter.com/nuktpls
-📋 https://github.com/nuktpls`
-const nuMESSAGEtabTwo = `A História de NÜktpls 🐙
-`
+const options = {
+	inferType: true,
+	flags: {
+		page: {
+			alias: 'p'
+		},
+		página: {
+			alias: 'pagina'
+		},
+		debug: {
+			type: 'boolean',
+			default: false,
+			alias: 'd'
+		},
+		version: {
+			type: 'boolean',
+			default: false,
+			alias: 'v'
+		},
+		versão: {
+			type: 'boolean',
+			default: false
+		},
+		welcome: {
+			type: 'boolean',
+			default: false,
+			alias: '-w'
+		},
+		help: {
+			type: 'boolean',
+			default: false,
+			alias: '-h'
+		},
+		chapter: {
+			alias: 'c'
+		},
+		capítulo: {
+			alias: 'capitulo'
+		},
+		clear: {
+			type: 'boolean',
+			default: true
+		}
+	}
+}
+// clearConsole()
 
-clearConsole()
-log(breakLine)
-log(messageBLUEinverse(nuTEIASbemvindo))
-log(breakLine)
-log(messageYELLOW(nuTEIASabre))
-log(messageGREEN(nuMESSAGE))
-log(messageYELLOW(nuTERIASfecha))
-log(messageBLUE(nuMESSAGElinks))
-log(breakLine)
-setTimeout(function () {
-	clearConsole()
-	log(breakLine)
-	log(messageBLUEinverse(nuMESSAGEtabTwo))
-}, 5000)
+const helper = meow(helpText, options)
+if (helper.flags.welcome) {
+	init.sceneWelcome()
+}
+if (helper.flags.chapter || helper.flags.capítulo) {
+	init.sceneChapter(helper.flags.chapter || helper.flags.capítulo)
+}
+
+helper.input.includes('help') && helper.showHelp(0)
+helper.input.includes('versão') && helper.showVersion(0)
+debug(helper.flags.debug, helper.flags, helper.input)
+// (async () => {
+
+// })
