@@ -1,11 +1,8 @@
-const pimpMyCLI = require('./index')
+#!/usr/bin/env node
+const {helper, goAsync, clearAll} = require('./cli')
+const cleanConsole = require('clear-any-console')
 
-const message = pimpMyCLI({
-	style: {
-		color: 'blue',
-		bold: true
-	},
-	browserExtension: true
-})
-
-console.log('Zumbamaster', message)
+if (clearAll) {
+	cleanConsole()
+}
+goAsync()
