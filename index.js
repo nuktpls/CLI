@@ -23,7 +23,9 @@ module.exports = options => {
 	}
 	const opts = {...defaultOptions, ...options}
 	const {agent, subAgent, msg, style, browserExtension, clear, version} = opts
-	clear && clearConsole()
+	if (clear) {
+		clearConsole()
+	}
 	const {color, bold, underline, inverse} = style
 
 	let styledMsg = chalk.white

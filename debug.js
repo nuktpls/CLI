@@ -1,16 +1,20 @@
 const pimpMyCLI = require('./index')
+const clearConsole = require('clear-any-console')
 
-module.exports = (isDebug, flags, input) => {
-	if (!isDebug) {
-		return
+module.exports = (clear, isDebug, flags, input) => {
+	if (clear && !isDebug) {
+		clearConsole()
 	}
 
-	console.log(
-		pimpMyCLI({
-			subAgent: 'warning'
-		})
-	)
+	if (clear && isDebug) {
+		clearConsole()
+		console.log(
+			pimpMyCLI({
+				subAgent: 'warning'
+			})
+		)
 
-	console.log(`flags`, flags)
-	console.log(`input`, input)
+		console.log(`flags`, flags)
+		console.log(`input`, input)
+	}
 }
