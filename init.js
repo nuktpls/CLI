@@ -2,10 +2,11 @@ const tabConstruct = require('./tabConstruct')
 const {tabWELCOME, tabChapters, tabTWO, tabTHREE} = require('./tabs')
 
 const sceneWelcome = () => tabConstruct.constructorTabWelcome(tabWELCOME())
-const sceneChapter = (chapter, qtdRow, nexts, rangeBegin, latest, first) => {
+const sceneChapter = (chapter, pages, qtdRow, nexts, rangeBegin, latest, first) => {
 	tabConstruct.constructorTabChapter(
 		tabChapters(),
 		chapter,
+		pages,
 		qtdRow,
 		first,
 		nexts,

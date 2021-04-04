@@ -103,10 +103,32 @@ const options = {
 			alias: 'lst',
 			type: 'boolean',
 			default: false
+		},
+		pages: {
+			alias: 'page',
+			type: 'number',
+			default: 0
+		},
+		páginas: {
+			alias: 'página',
+			type: 'number',
+			default: 0
 		}
 	}
 }
 
 const helper = meow(helpText, options)
 
-module.exports = {helper}
+const welcome = helper.flags.welcome
+
+helper.flags.chapter = helper.flags.chapter || helper.flags.capítulo
+helper.flags.capítulo = helper.flags.capítulo || helper.flags.chapter
+const capitulo = helper.flags.capítulo || helper.flags.chapter
+const qtdRow = helper.flags.qtdRow
+const nexts = helper.flags.nexts
+const rangeBegin = helper.flags.rangeBegin
+const latest = helper.flags.latest
+const first = helper.flags.first
+const pages = helper.flags.pages
+
+module.exports = {helper, welcome, capitulo, qtdRow, nexts, rangeBegin, latest, first, pages}

@@ -66,10 +66,10 @@ module.exports = options => {
 		return `${chalk.red(' ' + emoji.error + ' : ')} ${chalk.red('!Error')}`
 	}
 	if (subAgent === 'warning') {
-		return `${chalk.yellow(' ' + emoji.warning + ' : ')} ${chalk.yellow('Warning.')}`
+		return `${chalk.yellow(' ' + emoji.warning + ' : ')} ${chalk.yellow('Warning')}`
 	}
 	if (subAgent === 'info') {
-		return `${chalk.blue(' ' + emoji.info + ' : ')} ${chalk.blue('Info:')}`
+		return `${chalk.blue(' ' + emoji.info + ' : ')} ${chalk.blue('Info')}`
 	}
 	if (subAgent === 'success') {
 		return `${chalk.green(' ' + emoji.success + ' : ')} ${chalk.green('Success!!!')}`

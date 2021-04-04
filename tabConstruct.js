@@ -1,20 +1,28 @@
+const {dim} = require('chalk')
 const log = console.log
 
 const constructorTabWelcome = tab => {
 	tab.map(nowLogWelcome => {
-		console.log(nowLogWelcome.styledMsg(nowLogWelcome.msg))
-		return process.exit
+		return log(nowLogWelcome.styledMsg(nowLogWelcome.msg))
 	})
 }
 
-const constructorTabChapter = (tab, chapter, qtdRow, first, nexts, rangeBegin, latest) => {
+const constructorTabChapter = (tab, chapter, pages, qtdRow, first, nexts, rangeBegin, latest) => {
 	const maybePluralize = (count, noun, suffix = 's') => `${noun}${count !== 1 ? suffix : ''}`
 	tab.map(nowChapter => {
 		if (nowChapter.subAgent === chapter) {
-			const splitText = nowChapter.msg.split('\n')
+			let splitText = nowChapter.msg.split('\n')
 			const totalRows = splitText.length
-			if (qtdRow === 0) {
-				qtdRow = totalRows
+			if (qtdRow === 0 && pages) {
+				qtdRow = 10
+			}
+			if (pages >= 1 && !latest && !nexts && !rangeBegin) {
+				if (pages === 1) {
+					splitText = splitText.slice(pages - 1, pages * qtdRow)
+				} else {
+					const sum = pages * qtdRow
+					splitText = splitText.slice(sum - qtdRow, sum)
+				}
 			}
 			let totalFinal = qtdRow >= totalRows ? totalRows : qtdRow
 			if (first || qtdRow) {
@@ -22,12 +30,13 @@ const constructorTabChapter = (tab, chapter, qtdRow, first, nexts, rangeBegin, l
 					const labelShowing = qtdRow >= 0 && qtdRow < totalRows ? 'Primeira' : 'Toda'
 					const pluralPrimeiras = maybePluralize(totalFinal, labelShowing)
 					let countLine = 0
-					console.log(`${pluralPrimeiras} ${totalFinal} de um total de ${totalRows} linhas: `)
+					log(`${pluralPrimeiras} ${totalFinal} de um total de ${totalRows} linhas: `)
 					splitText.map(nowLine => {
 						countLine++
 						if (countLine <= totalFinal) {
-							console.log(`${countLine}:  ${nowLine}`)
-							return process.exit
+							return log(
+								`${dim(!pages ? countLine : countLine + pages * qtdRow - qtdRow + ':')}  ${nowLine}`
+							)
 						}
 					})
 				}
@@ -35,15 +44,17 @@ const constructorTabChapter = (tab, chapter, qtdRow, first, nexts, rangeBegin, l
 
 			if (nexts) {
 				let countNextLine = 0
-				const nextLines = splitText.slice(qtdRow, qtdRow + 1 + qtdRow)
+				const pagesBegin = pages ? pages * qtdRow : pages + qtdRow
+				const pagesEnd = pages ? qtdRow * pages + qtdRow : qtdRow + 1 + qtdRow
+				const nextLines = splitText.slice(pagesBegin, pagesEnd)
 				const pluralProximas = maybePluralize(totalFinal, 'Próxima')
 				const nextTotalFinalText = totalFinal <= 1 ? 0 : totalFinal
-				console.log(`${pluralProximas} ${nextTotalFinalText} de um total de ${totalRows} linhas: `)
+				log(`${pluralProximas} ${nextTotalFinalText} de um total de ${totalRows} linhas: `)
 				nextLines.map(nextLine => {
 					countNextLine++
 					if (countNextLine <= totalFinal) {
 						const nowLine = qtdRow + countNextLine
-						console.log(`${nowLine}:  ${nextLine}`)
+						log(`${dim(pagesBegin + nowLine - qtdRow + ':')}  ${nextLine}`)
 					}
 				})
 			}
@@ -52,15 +63,17 @@ const constructorTabChapter = (tab, chapter, qtdRow, first, nexts, rangeBegin, l
 				let countRangeLine = 0
 				const rowBegin = rangeBegin
 				const qtdRowBegin = rowBegin - 1
-				const rangeLines = splitText.slice(qtdRowBegin, qtdRowBegin + qtdRow)
-				console.log(
-					`Entre a linha número ${qtdRowBegin + 1} e a de número ${qtdRowBegin + qtdRow}: `
+				const rangeLines = splitText.slice(
+					qtdRowBegin,
+					pages ? qtdRowBegin + qtdRow : qtdRowBegin + qtdRow
 				)
+				// console.log(splitText)
+				log(`Entre a linha número ${qtdRowBegin + 1} e a de número ${qtdRowBegin + qtdRow}: `)
 				rangeLines.map(rangeLine => {
 					countRangeLine++
 					if (countRangeLine <= totalFinal) {
 						const nowRangeLine = countRangeLine + qtdRowBegin
-						console.log(`${nowRangeLine}:  ${rangeLine}`)
+						log(`${dim(nowRangeLine + ':')}  ${rangeLine}`)
 					}
 				})
 			}
@@ -69,17 +82,16 @@ const constructorTabChapter = (tab, chapter, qtdRow, first, nexts, rangeBegin, l
 				let countLastLine = 0
 				const ultimaProximas = maybePluralize(totalFinal, 'Última')
 				const lastTotalFinalText = totalFinal <= 1 ? 0 : totalFinal
-				const slicedArr = splitText.slice(totalRows - totalFinal)
+				const slicedArr = splitText.slice(totalRows - qtdRow)
+				log(qtdRow)
 				slicedArr.map(lastLine => {
 					countLastLine++
 					if (countLastLine === 1) {
-						console.log(
-							`${ultimaProximas} ${lastTotalFinalText} de um total de ${totalRows} linhas:  `
-						)
+						log(`${ultimaProximas} ${lastTotalFinalText} de um total de ${totalRows} linhas:  `)
 					}
 					if (countLastLine <= totalFinal) {
 						const nowLine = totalRows - totalFinal + countLastLine
-						console.log(`${nowLine}:  ${lastLine}`)
+						log(`${dim(nowLine + ':')}  ${lastLine}`)
 					}
 				})
 			}
