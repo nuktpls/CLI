@@ -1,5 +1,7 @@
 const meow = require('meow')
 const {green, yellow, cyan, blue} = require('chalk')
+const debug = require('./debug')
+const {sceneWelcome, sceneChapter} = require('./init')
 
 const helpText = `
 	${blue(`Usage`)}
@@ -18,14 +20,14 @@ const helpText = `
 		${cyan(`--chapter`)},	${cyan(`-c`)}	${blue(`Choosing chapter to print.`)}
 		${cyan(`--capítulo`)},		${blue(`Choosing chapter to print.`)}
 		${cyan(`--qtdRow`)},	${cyan(`-rows`)}	${blue(`quantity of lines to print.`)}
-		${cyan(`--nexts`)},	${cyan(`-next`)}	${blue(`Nexts quantity to print.`)}
+		${cyan(`--next`)},	${cyan(`-next`)}	${blue(`Next quantity to print.`)}
 		${cyan(`--first`)},	${cyan(`-first`)}	${blue(`First quantities to print.`)}
 		${cyan(`--rangeBegin`)},	${cyan(`-range`)}	${blue(`Range quantity to print.`)}
 		${cyan(`--latest`)},	${cyan(`-lst`)}	${blue(`Latest quantity to print.`)}
 
 	${blue(`Examples`)}
 		${green(`npx nuktpls`)}		${yellow(`--welcome`)}
-		${green(`nuktpls --capitulo 2`)}	${yellow(`--nexts --rows=10`)}
+		${green(`nuktpls --capitulo 2`)}	${yellow(`--next --rows=10`)}
 		${green(`nuktpls --capitulo 2`)}	${yellow(`--rangeBegin=18  --rows=7`)}
 		${green(`nuktpls --capitulo 2`)}	${yellow(`--first --rows 2`)}
 		${green(`nuktpls --capitulo 2`)}	${yellow(`--latest --rows 7`)}
@@ -75,22 +77,27 @@ const options = {
 			default: 0
 		},
 		clear: {
+			type: 'number',
+			default: 0,
+			alias: 'no-clear'
+		},
+		clearAll: {
 			type: 'boolean',
 			default: false,
-			alias: 'cl'
+			alias: 'clt'
 		},
 		qtdRow: {
 			alias: 'rows',
 			type: 'number',
 			default: 0
 		},
-		nexts: {
-			alias: 'next',
-			type: 'boolean',
-			default: false
+		next: {
+			alias: 'nxt',
+			type: 'number',
+			default: 0
 		},
 		first: {
-			alias: 'first',
+			alias: 'primeiros',
 			type: 'boolean',
 			default: false
 		},
@@ -125,10 +132,29 @@ helper.flags.chapter = helper.flags.chapter || helper.flags.capítulo
 helper.flags.capítulo = helper.flags.capítulo || helper.flags.chapter
 const capitulo = helper.flags.capítulo || helper.flags.chapter
 const qtdRow = helper.flags.qtdRow
-const nexts = helper.flags.nexts
+const next = helper.flags.next
 const rangeBegin = helper.flags.rangeBegin
 const latest = helper.flags.latest
 const first = helper.flags.first
 const pages = helper.flags.pages
+const clear = helper.flags.clear
+const clearAll = helper.flags.clearAll
 
-module.exports = {helper, welcome, capitulo, qtdRow, nexts, rangeBegin, latest, first, pages}
+async function goAsync() {
+	if (welcome) {
+		sceneWelcome(clear)
+	}
+	if (capitulo) {
+		sceneChapter(capitulo, pages, qtdRow, first, next, rangeBegin, latest)
+	}
+
+	helper.input.includes('help') && helper.showHelp(0)
+	helper.input.includes('versão') && helper.showVersion(0)
+	helper.flags.debug && debug(helper.flags.debug, helper.flags, helper.input)
+}
+
+module.exports = {
+	helper,
+	goAsync,
+	clearAll
+}

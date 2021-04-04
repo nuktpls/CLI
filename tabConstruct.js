@@ -1,13 +1,36 @@
 const {dim} = require('chalk')
 const log = console.log
+const consoleClear = require('clear-any-console')
+const handleError = require('./errors')
 
-const constructorTabWelcome = tab => {
+const constructorTabWelcome = (tab, clearTab) => {
+	let moreOptionsTrueCount = 0
+
+	if (clearTab === 2) {
+		consoleClear()
+	}
 	tab.map(nowLogWelcome => {
-		return log(nowLogWelcome.styledMsg(nowLogWelcome.msg))
+		moreOptionsTrueCount++
+		if (moreOptionsTrueCount === 1) {
+		}
+		if (
+			nowLogWelcome.moreOptions === 2 &&
+			moreOptionsTrueCount === 1 &&
+			clearTab === 0 &&
+			moreOptionsTrueCount === 1
+		) {
+			consoleClear()
+		}
+
+		setTimeout(() => {
+			log(nowLogWelcome.styledMsg(nowLogWelcome.msg))
+		}, 1)
+
+		// return log(nowLogWelcome.styledMsg(nowLogWelcome.msg))
 	})
 }
 
-const constructorTabChapter = (tab, chapter, pages, qtdRow, first, nexts, rangeBegin, latest) => {
+const constructorTabChapter = (tab, chapter, pages, qtdRow, first, next, rangeBegin, latest) => {
 	const maybePluralize = (count, noun, suffix = 's') => `${noun}${count !== 1 ? suffix : ''}`
 	tab.map(nowChapter => {
 		if (nowChapter.subAgent === chapter) {
@@ -16,7 +39,7 @@ const constructorTabChapter = (tab, chapter, pages, qtdRow, first, nexts, rangeB
 			if (qtdRow === 0 && pages) {
 				qtdRow = 10
 			}
-			if (pages >= 1 && !latest && !nexts && !rangeBegin) {
+			if (pages >= 1 && !latest && !next && !rangeBegin) {
 				if (pages === 1) {
 					splitText = splitText.slice(pages - 1, pages * qtdRow)
 				} else {
@@ -25,8 +48,8 @@ const constructorTabChapter = (tab, chapter, pages, qtdRow, first, nexts, rangeB
 				}
 			}
 			let totalFinal = qtdRow >= totalRows ? totalRows : qtdRow
-			if (first || qtdRow) {
-				if (!nexts && !rangeBegin && !latest) {
+			if (qtdRow || chapter > 0) {
+				if (!next && !rangeBegin && !latest && !first) {
 					const labelShowing = qtdRow >= 0 && qtdRow < totalRows ? 'Primeira' : 'Toda'
 					const pluralPrimeiras = maybePluralize(totalFinal, labelShowing)
 					let countLine = 0
@@ -37,24 +60,57 @@ const constructorTabChapter = (tab, chapter, pages, qtdRow, first, nexts, rangeB
 							return log(
 								`${dim(!pages ? countLine : countLine + pages * qtdRow - qtdRow + ':')}  ${nowLine}`
 							)
+						} else if (totalFinal === 0) {
+							return console.log(
+								`${dim(!pages ? countLine : countLine + pages * qtdRow - qtdRow + ':')}  ${nowLine}`
+							)
 						}
+					})
+				} else if (first) {
+					let countFirstLine = 0
+					const pluralPrimeiras = maybePluralize(totalFinal, 'Primeira')
+					const firstTotalFinalText = totalFinal <= 1 ? 0 : totalFinal
+					// const firstLines = splitText.slice(
+					// 	0,
+					// 	(firstTotalFinalText && qtdRow) === 0 ? 10 : firstTotalFinalText + qtdRow
+					// )
+					const firstLines = splitText.slice(0, qtdRow || 10)
+					// log(firstLines)
+					// log(firstTotalFinalText)
+					// log(qtdRow)
+					log(`${pluralPrimeiras} ${firstTotalFinalText} de um total de ${totalRows} linhas: `)
+					firstLines.map(firstLine => {
+						countFirstLine++
+						// if (countFirstLine <= totalFinal) {
+						// log(firstLine)
+						log(
+							`${dim(
+								!pages ? countFirstLine + ':' : countLine + pages * qtdRow - qtdRow + ':'
+							)}  ${firstLine}`
+						)
+						// }
 					})
 				}
 			}
 
-			if (nexts) {
+			if (next) {
+				if (qtdRow <= 0) {
+					const err = new Error([`Por favor, inserir quantidades de linhas --rows x`])
+					handleError(`init problem`, err)
+				}
+
 				let countNextLine = 0
-				const pagesBegin = pages ? pages * qtdRow : pages + qtdRow
-				const pagesEnd = pages ? qtdRow * pages + qtdRow : qtdRow + 1 + qtdRow
-				const nextLines = splitText.slice(pagesBegin, pagesEnd)
+				const pagesEnd = pages ? qtdRow * pages + qtdRow : next + 1 + qtdRow
+				const nextLines = splitText.slice(next, pagesEnd)
 				const pluralProximas = maybePluralize(totalFinal, 'Próxima')
 				const nextTotalFinalText = totalFinal <= 1 ? 0 : totalFinal
 				log(`${pluralProximas} ${nextTotalFinalText} de um total de ${totalRows} linhas: `)
+
 				nextLines.map(nextLine => {
 					countNextLine++
 					if (countNextLine <= totalFinal) {
 						const nowLine = qtdRow + countNextLine
-						log(`${dim(pagesBegin + nowLine - qtdRow + ':')}  ${nextLine}`)
+						log(`${dim(next + nowLine - qtdRow + ':')}  ${nextLine}`)
 					}
 				})
 			}
@@ -67,7 +123,6 @@ const constructorTabChapter = (tab, chapter, pages, qtdRow, first, nexts, rangeB
 					qtdRowBegin,
 					pages ? qtdRowBegin + qtdRow : qtdRowBegin + qtdRow
 				)
-				// console.log(splitText)
 				log(`Entre a linha número ${qtdRowBegin + 1} e a de número ${qtdRowBegin + qtdRow}: `)
 				rangeLines.map(rangeLine => {
 					countRangeLine++

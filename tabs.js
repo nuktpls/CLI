@@ -11,7 +11,7 @@ const tabWELCOME = () => {
 				inverse: true,
 				bold: true
 			},
-			clear: true
+			clear: 2
 		}),
 		cli({
 			agent: 'message',
@@ -58,13 +58,13 @@ const tabChapters = () => {
 			style: {
 				color: '#dd3'
 			},
-			clear: true
+			clear: 2
 		}),
 		cli({
 			agent: 'chapter',
 			subAgent: 2,
 			msg: capituloUM.nuMESSAGEtabFift,
-			clear: true
+			clear: 2
 		})
 	]
 }

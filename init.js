@@ -1,25 +1,23 @@
 const tabConstruct = require('./tabConstruct')
-const {tabWELCOME, tabChapters, tabTWO, tabTHREE} = require('./tabs')
+const {tabWELCOME, tabChapters} = require('./tabs')
 
-const sceneWelcome = () => tabConstruct.constructorTabWelcome(tabWELCOME())
-const sceneChapter = (chapter, pages, qtdRow, nexts, rangeBegin, latest, first) => {
+const sceneWelcome = clearTab => {
+	tabConstruct.constructorTabWelcome(tabWELCOME(), clearTab)
+}
+const sceneChapter = (chapter, pages, qtdRow, first, next, rangeBegin, latest) => {
 	tabConstruct.constructorTabChapter(
 		tabChapters(),
 		chapter,
 		pages,
 		qtdRow,
 		first,
-		nexts,
+		next,
 		rangeBegin,
 		latest
 	)
 }
-const sceneTwo = () => tabConstruct.constructorTabTWO(tabTWO())
-const sceneThree = () => tabConstruct.constructorTabTHREE(tabTHREE())
 
 module.exports = {
 	sceneWelcome,
-	sceneTwo,
-	sceneThree,
 	sceneChapter
 }

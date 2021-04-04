@@ -1,4 +1,3 @@
-const clearConsole = require('clear-any-console')
 const chalk = require('chalk')
 const emoji = require('log-symbols')
 
@@ -23,11 +22,7 @@ module.exports = options => {
 	}
 	const opts = {...defaultOptions, ...options}
 	const {agent, subAgent, msg, style, browserExtension, clear, version} = opts
-	if (clear) {
-		clearConsole()
-	}
 	const {color, bold, underline, inverse} = style
-
 	let styledMsg = chalk.white
 
 	if (agent === 'message' || agent === 'chapter') {
@@ -56,10 +51,14 @@ module.exports = options => {
 				styledMsg = 'background-color: ' + color + '; color: white; mix-blend-mode: difference;'
 			}
 		}
-		if (agent === 'chapter') {
-			return {styledMsg, msg, subAgent}
+		let moreOptions = null
+		if (clear) {
+			moreOptions = clear
 		}
-		return {styledMsg, msg}
+		if (agent === 'chapter') {
+			return {styledMsg, msg, subAgent, moreOptions}
+		}
+		return {styledMsg, msg, moreOptions}
 	}
 
 	if (subAgent === 'error') {
