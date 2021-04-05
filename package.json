@@ -1,5 +1,5 @@
 {
-  "name": "pimp-my-cli",
+  "name": "nuktpls-cli",
   "version": "0.0.6",
   "bin": {
     "nuktpls": "index.js"
@@ -16,14 +16,14 @@
   },
   "keywords": [
     "nuktpls",
-    "pimp-my-cli",
+    "nuktpls-cli",
     "milton bolonha",
     "edu4dev",
     "the-offspring"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nuktpls/pimp-my-cli"
+    "url": "https://github.com/nuktpls/nuktpls-cli"
   },
   "author": {
     "name": "Milton Bolonha",
