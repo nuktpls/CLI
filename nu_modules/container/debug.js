@@ -1,5 +1,4 @@
-const pimpMyCLI = require('./index')
-const clearConsole = require('clear-any-console')
+const pimpMyCLI = require('../index')
 const {yellow} = require('chalk')
 
 module.exports = (isDebug, flags, input) => {

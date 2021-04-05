@@ -92,7 +92,6 @@ ${red('	<ReiDoPó>')}Você quem pediu. Hora de dormir.
 ${yellow('	<Narração>')}O rei do pó dispara a sua arma de Sangue a queima roupa
 	e deleta o Negão Vagabundo. NÜbits são espalhados para todos os lados,
 	mas seguem a carteira de Lagosta.
-
 ${red.bold('</Docas>')}
 `
 

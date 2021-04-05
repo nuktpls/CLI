@@ -1,9 +1,8 @@
 /**
- * Node Cli Handle Error.
+ *  Handle Error
  */
-// const sym = require('log-symbols')
 const {red, yellow, dim, blue} = require('chalk')
-const cli = require('./index')
+const pimpMyCli = require('../index')
 const clearConsole = require('clear-any-console')
 
 /**
@@ -13,9 +12,9 @@ const clearConsole = require('clear-any-console')
  * @param {Boolean} exit
  */
 module.exports = (heading = `ERROR: `, err, displayError = true, exit = true, debug = false) => {
-	const warning = cli({subAgent: 'warning'})
-	const error = cli({subAgent: 'error'})
-	const info = cli({subAgent: 'info'})
+	const warning = pimpMyCli({subAgent: 'warning'})
+	const error = pimpMyCli({subAgent: 'error'})
+	const info = pimpMyCli({subAgent: 'info'})
 	if (err) {
 		console.log()
 		if (displayError) {

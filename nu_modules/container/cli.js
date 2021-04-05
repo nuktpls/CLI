@@ -1,7 +1,7 @@
 const meow = require('meow')
 const {green, yellow, cyan, blue} = require('chalk')
 const debug = require('./debug')
-const {sceneWelcome, sceneChapter} = require('./init')
+const {sceneWelcome, sceneChapter, sceneCharacter} = require('../init')
 
 const helpText = `
 	${blue(`Usage`)}
@@ -37,10 +37,14 @@ const options = {
 	inferType: true,
 	flags: {
 		page: {
-			alias: 'p'
+			alias: 'p',
+			type: 'number',
+			default: 0
 		},
 		página: {
-			alias: 'pagina'
+			alias: 'pagina',
+			type: 'number',
+			default: 1
 		},
 		debug: {
 			type: 'boolean',
@@ -111,15 +115,40 @@ const options = {
 			type: 'boolean',
 			default: false
 		},
-		pages: {
-			alias: 'page',
-			type: 'number',
-			default: 0
+		character: {
+			alias: 'personagem',
+			type: 'string',
+			default: ''
 		},
-		páginas: {
-			alias: 'página',
-			type: 'number',
-			default: 0
+		name: {
+			alias: 'nome',
+			type: 'boolean',
+			default: false
+		},
+		gender: {
+			alias: 'gênero',
+			type: 'boolean',
+			default: false
+		},
+		age: {
+			alias: 'idade',
+			type: 'boolean',
+			default: false
+		},
+		characterVersion: {
+			alias: 'versãoPersonagem',
+			type: 'boolean',
+			default: false
+		},
+		birth: {
+			alias: 'nascimento',
+			type: 'boolean',
+			default: false
+		},
+		birthplace: {
+			alias: 'localNascimento',
+			type: 'boolean',
+			default: false
 		}
 	}
 }
@@ -136,16 +165,37 @@ const next = helper.flags.next
 const rangeBegin = helper.flags.rangeBegin
 const latest = helper.flags.latest
 const first = helper.flags.first
-const pages = helper.flags.pages
+const page = helper.flags.page
 const clear = helper.flags.clear
 const clearAll = helper.flags.clearAll
+
+const character = helper.flags.character
+const characterName = helper.flags.name
+const characterGender = helper.flags.gender
+const characterAge = helper.flags.age
+const characterVersion = helper.flags.version
+const characterBirth = helper.flags.birth
+const characterBirthplace = helper.flags.birthplace
 
 async function goAsync() {
 	if (welcome) {
 		sceneWelcome(clear)
 	}
+
 	if (capitulo) {
-		sceneChapter(capitulo, pages, qtdRow, first, next, rangeBegin, latest)
+		sceneChapter(capitulo, page, qtdRow, first, next, rangeBegin, latest)
+	}
+
+	if (character) {
+		sceneCharacter(
+			character,
+			characterName,
+			characterGender,
+			characterAge,
+			characterVersion,
+			characterBirth,
+			characterBirthplace
+		)
 	}
 
 	helper.input.includes('help') && helper.showHelp(0)
