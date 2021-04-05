@@ -1,4 +1,4 @@
-const pimpMyCLI = require('../index')
+const pimpMyCLI = require('../container/pimpMyCli-container')
 const {yellow} = require('chalk')
 
 module.exports = (isDebug, flags, input) => {

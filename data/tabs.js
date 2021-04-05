@@ -1,4 +1,4 @@
-const pimpMyCli = require('../nu_modules/index')
+const pimpMyCli = require('../nu_modules/container/pimpMyCli-container')
 const {
 	nuTEIASbemvindo,
 	nuTEIASabre,

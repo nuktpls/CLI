@@ -2,7 +2,7 @@
  *  Handle Error
  */
 const {red, yellow, dim, blue} = require('chalk')
-const pimpMyCli = require('../index')
+const pimpMyCli = require('../container/pimpMyCli-container')
 const clearConsole = require('clear-any-console')
 
 /**
