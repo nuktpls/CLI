@@ -154,15 +154,17 @@ const constructorTabChapter = (tab, chapter, page, qtdRow, first, next, rangeBeg
 				let countLastLine = 0
 				const ultimaProximas = maybePluralize(totalFinal, 'Última')
 				const lastTotalFinalText = totalFinal <= 1 ? 0 : totalFinal
+				if (qtdRow === 0) {
+					qtdRow = 10
+				}
 				const slicedArr = splitText.slice(totalRows - qtdRow)
-				log(qtdRow)
 				slicedArr.map(lastLine => {
 					countLastLine++
 					if (countLastLine === 1) {
 						log(`${ultimaProximas} ${lastTotalFinalText} de um total de ${totalRows} linhas:  `)
 					}
 					if (countLastLine <= totalFinal) {
-						const nowLine = totalRows - totalFinal + countLastLine
+						const nowLine = totalRows - qtdRow + countLastLine
 						log(`${dim(nowLine + ':')}  ${lastLine}`)
 					}
 				})
