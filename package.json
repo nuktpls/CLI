@@ -2,16 +2,16 @@
   "name": "pimp-my-cli",
   "version": "0.0.6",
   "bin": {
-    "nuktpls": "test.js"
+    "nuktpls": "index.js"
   },
   "description": "Get to now NÜktpls via `npx nuktpls`.",
-  "main": "test.js",
+  "main": "index.js",
   "files": [
-    "test.js"
+    "index.js"
   ],
   "scripts": {
-    "start": "node ./test.js",
-    "test": "node test.js",
+    "start": "node ./index.js",
+    "test": "node index.js",
     "format": "prettier --write \"./**/*.{js,json\"}"
   },
   "keywords": [
