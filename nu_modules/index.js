@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 const {goAsync, clearAll} = require('./container/cli-container')
 const cleanConsole = require('clear-any-console')
 

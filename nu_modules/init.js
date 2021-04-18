@@ -2,7 +2,7 @@ const {
 	constructorTabWelcome,
 	constructorTabChapter,
 	constructorTabCharacter
-} = require('./container/tabConstruct')
+} = require('./container/tabConstruct-container')
 const {tabWELCOME, tabChapters, tabCharacters} = require('../data/tabs')
 
 const sceneWelcome = clearTab => {
@@ -12,8 +12,6 @@ const sceneChapter = (chapter, page, qtdRow, first, next, rangeBegin, latest) =>
 	constructorTabChapter(tabChapters(), chapter, page, qtdRow, first, next, rangeBegin, latest)
 }
 const sceneCharacter = (character, characterName, gender, age, version, birth, birthplace) => {
-	// console.log(tabCharacters())
-
 	constructorTabCharacter(
 		tabCharacters(),
 		character,
