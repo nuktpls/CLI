@@ -1,12 +1,24 @@
 const {
-	constructorTabWelcome,
+	constructorTabMultipleArrays,
 	constructorTabChapter,
 	constructorTabCharacter
 } = require('./container/tabConstruct-container')
-const {tabWELCOME, tabChapters, tabCharacters} = require('../data/tabs')
 
-const sceneWelcome = clearTab => {
-	constructorTabWelcome(tabWELCOME(), clearTab)
+const {config} = require('./config/index')
+
+// return console.log(config)
+
+const {tabMULTIPLEarrays} = config.tabs || null
+const {tabChapters} = config.tabs || null
+const {tabCharacters} = config.tabs || null
+
+// const tabMultipleStrings = tabWELCOME
+
+const sceneWelcome = (clearTab, flags) => {
+	// console.log(flags)
+	// const owww = flags.find(imHere => imHere.we)
+	constructorTabMultipleArrays(tabMULTIPLEarrays(), clearTab, flags)
+	// tabMultipleStrings
 }
 const sceneChapter = (chapter, page, qtdRow, first, next, rangeBegin, latest) => {
 	constructorTabChapter(tabChapters(), chapter, page, qtdRow, first, next, rangeBegin, latest)

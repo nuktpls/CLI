@@ -28,7 +28,7 @@ const characterBirthplace = helper.flags.birthplace
 
 async function goAsync() {
 	if (welcome) {
-		sceneWelcome(clear)
+		sceneWelcome(clear, helper.flags)
 	}
 
 	if (capitulo) {

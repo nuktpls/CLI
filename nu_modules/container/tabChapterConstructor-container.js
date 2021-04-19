@@ -1,16 +1,20 @@
-const {dim} = require('chalk')
+const {tabChapter} = require('../components/tabChapter')
+const {labelTabChapter} = require('../components/labelTabChapter')
 
 const tabChapterConstructor = (page, qtdRow, totalRows, maybePluralize, totalFinal, splitText) => {
+	let countLine = 0
 	const labelShowing = qtdRow >= 0 && qtdRow < totalRows ? 'Primeira' : 'Toda'
 	const pluralPrimeiras = maybePluralize(totalFinal, labelShowing)
-	let countLine = 0
-	console.log(`${pluralPrimeiras} ${totalFinal} de um total de ${totalRows} linhas: `)
+
+	// Label Tab Chapter component
+	labelTabChapter(pluralPrimeiras, totalFinal, totalRows)
+
+	// array walker
 	splitText.map(nowLine => {
 		countLine++
 		if (countLine <= totalFinal) {
-			return console.log(
-				`${dim(!page ? countLine : countLine + page * qtdRow - qtdRow + ':')}  ${nowLine}`
-			)
+			// tabChapter lines print component
+			return tabChapter(page, countLine, qtdRow, nowLine)
 		}
 	})
 }
