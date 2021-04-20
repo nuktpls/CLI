@@ -1,5 +1,5 @@
 const {dim} = require('chalk')
-const handleError = require('./errors')
+const handleError = require('../../PimpMyCli/container/errors')
 
 const tabNextConstructor = (
 	next,

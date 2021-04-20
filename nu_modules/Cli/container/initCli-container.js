@@ -2,9 +2,9 @@ const {
 	constructorTabMultipleArrays,
 	constructorTabChapter,
 	constructorTabCharacter
-} = require('./container/tabConstruct-container')
+} = require('../../Walker/container/tabConstruct-container')
 
-const {config} = require('./config/index')
+const {config} = require('../../PimpMyCli/config/index')
 
 // return console.log(config)
 

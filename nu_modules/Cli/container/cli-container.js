@@ -1,6 +1,6 @@
 const meow = require('meow')
-const debug = require('./debug')
-const {sceneWelcome, sceneChapter, sceneCharacter} = require('../init')
+const debug = require('../../PimpMyCli/container/debug')
+const {sceneWelcome, sceneChapter, sceneCharacter} = require('./initCli-container')
 const {helpText} = require('../components/helpText')
 const {options} = require('../config/meow-tabs')
 

@@ -8,9 +8,9 @@ const {
 	nuMESSAGEtabTwo,
 	nuMESSAGEtabFift,
 	nuMESSAGEtabThree
-} = require('../../data/capituloUM')
-const {capituloDois} = require('../../data/capituloDois')
-const {heroiVagabundo, goshDev, boiSonoro, ditadoraFacista} = require('../../data/character')
+} = require('../../../data/capituloUM')
+const {capituloDois} = require('../../../data/capituloDois')
+const {heroiVagabundo, goshDev, boiSonoro, ditadoraFacista} = require('../../../data/character')
 
 const tabMULTIPLEarrays = () => {
 	return [

@@ -1,4 +1,4 @@
-const {config} = require('../config/')
+const {config} = require('../../PimpMyCli/config')
 
 const {tabChapterConstructor} = require('./tabChapterConstructor-container')
 const {tabNextConstructor} = require('./tabNextConstructor-container')
