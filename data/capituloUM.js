@@ -4,9 +4,9 @@ const {
 	nuTEIASabre,
 	nuMESSAGE,
 	nuMESSAGElinks
-} = require('./welcomeMultipleString-1')
+} = require('./multipleStrings/multipleStrig-01')
 
-const {nuMESSAGEtabFift} = require('./chapterOneBigString')
+const {capitulo} = require('./oneBig/capitulo-01')
 
 // const nuMESSAGEtabTwo = `A História de NÜktpls 🐙`
 // const nuMESSAGEtabThree = `O Sangue`
@@ -17,7 +17,7 @@ module.exports = {
 	nuTEIASabre,
 	nuMESSAGE,
 	nuMESSAGElinks,
-	nuMESSAGEtabFift
+	capitulo
 	// nuMESSAGEtabTwo,
 	// nuMESSAGEtabThree,
 }

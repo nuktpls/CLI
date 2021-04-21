@@ -6,9 +6,10 @@ const {
 	nuTERIASfecha,
 	nuMESSAGElinks,
 	nuMESSAGEtabTwo,
-	nuMESSAGEtabFift,
+	capitulo,
+	newCapitulo,
 	nuMESSAGEtabThree
-} = require('../../../data/capituloUM')
+} = require('../../../data/index')
 const {capituloDois} = require('../../../data/capituloDois')
 const {heroiVagabundo, goshDev, boiSonoro, ditadoraFacista} = require('../../../data/character')
 
@@ -70,7 +71,7 @@ const tabChapters = () => {
 		pimpMyCli({
 			agent: 'chapter',
 			subAgent: 1,
-			msg: nuMESSAGEtabTwo,
+			msg: newCapitulo,
 			style: {
 				color: '#dd3'
 			},
@@ -79,7 +80,7 @@ const tabChapters = () => {
 		pimpMyCli({
 			agent: 'chapter',
 			subAgent: 2,
-			msg: nuMESSAGEtabFift,
+			msg: capitulo,
 			clear: 2
 		}),
 		pimpMyCli({
