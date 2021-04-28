@@ -12,11 +12,20 @@ const tabChapterConstructor = (page, qtdRow, totalRows, maybePluralize, totalFin
 	// array walker
 	splitText.map(nowLine => {
 		countLine++
+		const digitsCount = totalFinal.toString().length
+		const digitPattern = countLine.toString().padStart(digitsCount, '0')
+
 		if (countLine <= totalFinal) {
 			// tabChapter lines print component
-			return tabChapter(page, countLine, qtdRow, nowLine)
+			return setTimeout(function () {
+				tabChapter(page, digitPattern, qtdRow, nowLine)
+				// console.log(digitPattern)
+			}, 100)
 		}
 	})
+	setTimeout(function () {
+		labelTabChapter(pluralPrimeiras, totalFinal, totalRows)
+	}, 100)
 }
 
 module.exports = {
