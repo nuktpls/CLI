@@ -8,9 +8,12 @@ const {
 	nuMESSAGEtabTwo,
 	capitulo,
 	newCapitulo,
+	capituloDois,
+	capituloUm,
+	capituloTres,
 	nuMESSAGEtabThree
 } = require('../../../data/index')
-const {capituloDois} = require('../../../data/capituloDois')
+// const {capituloDois} = require('../../../data/capituloDois')
 const {heroiVagabundo, goshDev, boiSonoro, ditadoraFacista} = require('../../../data/character')
 
 const tabMULTIPLEarrays = () => {
@@ -71,7 +74,7 @@ const tabChapters = () => {
 		pimpMyCli({
 			agent: 'chapter',
 			subAgent: 1,
-			msg: newCapitulo,
+			msg: capituloUm,
 			style: {
 				color: '#dd3'
 			},
@@ -80,13 +83,13 @@ const tabChapters = () => {
 		pimpMyCli({
 			agent: 'chapter',
 			subAgent: 2,
-			msg: capitulo,
+			msg: capituloDois,
 			clear: 2
 		}),
 		pimpMyCli({
 			agent: 'chapter',
 			subAgent: 3,
-			msg: capituloDois,
+			msg: capituloTres,
 			clear: 2
 		})
 	]

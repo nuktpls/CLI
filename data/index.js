@@ -8,14 +8,17 @@ const {
 	nuMESSAGElinks
 } = require('./multipleStrings/multipleStrig-01')
 
-const {capitulo} = require('./oneBig/capitulo-01')
+const {capitulo} = require('./oneBigString/capitulo-01')
+const {capituloUm} = require('./oneBigString/capitulo-01')
+const {capituloDois} = require('./oneBigString/capitulo-02')
+const {capituloTres} = require('./oneBigString/capitulo-03')
 
 const newCapitulo = subAgent => {
 	if (!subAgent) {
 		return null
 	}
 
-	fs.readdir('./data/oneBig', (err, files) => {
+	fs.readdir('./data/oneBigString', (err, files) => {
 		if (err) {
 			console.error(err)
 			return
@@ -48,6 +51,9 @@ module.exports = {
 	nuMESSAGE,
 	nuMESSAGElinks,
 	capitulo,
+	capituloUm,
+	capituloDois,
+	capituloTres,
 	newCapitulo
 	// nuMESSAGEtabTwo,
 	// nuMESSAGEtabThree,

@@ -1,4 +1,4 @@
-const capitulo = `
+const capituloUm = `
 O Sangue
 <Narração>Dos containers sagrados que caem do céu,
 pescado pelos grandes extratores em alto mar, uma
@@ -79,4 +79,4 @@ terra que lhes pertencia.
 
 `
 
-module.exports = {capitulo}
+module.exports = {capituloUm}

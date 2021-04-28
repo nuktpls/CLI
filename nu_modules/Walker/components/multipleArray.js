@@ -1,5 +1,7 @@
 const multipleArrayPrint = nowLogMultipleArrays => {
-	return console.log(nowLogMultipleArrays.styledMsg(nowLogMultipleArrays.msg))
+	return setTimeout(function () {
+		console.log(nowLogMultipleArrays.styledMsg(nowLogMultipleArrays.msg))
+	}, 100)
 }
 
 module.exports = {multipleArrayPrint}

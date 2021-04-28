@@ -1,4 +1,4 @@
-const capitulo = `
+const capituloTres = `
 
 Lua, a Famosa Hacker
 
@@ -60,4 +60,4 @@ um brilho azul claro.
 
 `
 
-module.exports = {capitulo}
+module.exports = {capituloTres}

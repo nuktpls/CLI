@@ -1,4 +1,4 @@
-const capitulo = `
+const capituloDois = `
 
 Brasil, 2005 do Ano Comum
 
@@ -85,4 +85,4 @@ Miltinho, de Miltown.
 
 `
 
-module.exports = {capitulo}
+module.exports = {capituloDois}
