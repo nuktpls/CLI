@@ -20,8 +20,8 @@ const constructorTabMultipleArrays = (tab, clearTab, flagSubAgent) => {
 		// find in the object/array for a subAgent
 		// config equal value in some flag child of #'s flags
 
-		console.log('flagSubAgent.subAgent')
-		console.log(flagSubAgent)
+		// console.log('flagSubAgent.subAgent')
+		// console.log(flagSubAgent)
 		setTimeout(() => {
 			return multipleArrayPrint(nowLogMultipleArrays)
 		}, 10)

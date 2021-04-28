@@ -1,4 +1,4 @@
-const capitulo = `
+const capituloDoze = `
 
 No Rastro do Herói
 <BoiSonoro>Espalhem-se. Avançar à direita. Meus três
@@ -84,4 +84,4 @@ Lagosta.
 
 `
 
-module.exports = {capitulo}
+module.exports = {capituloDoze}

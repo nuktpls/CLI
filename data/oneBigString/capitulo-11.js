@@ -1,4 +1,4 @@
-const capitulo = `
+const capituloOnze = `
 
 Celeste, a Deusa
 <Narração>Ao abrir os olhos Miltinho se encontra não mais
@@ -114,4 +114,4 @@ com um rastro de blackout deixado na sua partida.
 
 `
 
-module.exports = {capitulo}
+module.exports = {capituloOnze}

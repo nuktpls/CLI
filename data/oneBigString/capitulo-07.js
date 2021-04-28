@@ -1,4 +1,4 @@
-const capitulo = `
+const capituloSete = `
 
 Pagode do Esquadrão
 <Narração>Mais tarde, Miltinho está em casa fazendo
@@ -214,4 +214,4 @@ multifunções. A campainha toca. Lua encara a porta.
 
 `
 
-module.exports = {capitulo}
+module.exports = {capituloSete}

@@ -1,4 +1,4 @@
-const capitulo = `
+const capituloQuatro = `
 
 Nova São Paulo
 <Narração local=”antiga-África-central”>Um funcionário
@@ -38,4 +38,4 @@ senhor. Esse é o meu relatório final.
 
 `
 
-module.exports = {capitulo}
+module.exports = {capituloQuatro}

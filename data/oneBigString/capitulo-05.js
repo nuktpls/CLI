@@ -1,4 +1,4 @@
-const capitulo = `
+const capituloCinco = `
 
 Show do Esquadrão
 <Menino>Miltinho corre, hoje tem show do Esquadrão. Ele
@@ -40,4 +40,4 @@ agora é o lobo guará ou quiçá vira lata.
 
 `
 
-module.exports = {capitulo}
+module.exports = {capituloCinco}

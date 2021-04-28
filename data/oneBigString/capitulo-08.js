@@ -1,4 +1,4 @@
-const capitulo = `
+const capituloOito = `
 
 Esquadrão Vagabundo está de volta
 
@@ -184,4 +184,4 @@ em vista.
 <Narração>Olhares se cruzam. Há tensão no ar.
 `
 
-module.exports = {capitulo}
+module.exports = {capituloOito}

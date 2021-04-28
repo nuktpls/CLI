@@ -1,4 +1,4 @@
-const capitulo = `
+const capituloDez = `
 
 A Canção do Herói
 <AmareloVagabundo>Você sabe que ele não tem nada de
@@ -48,4 +48,4 @@ que sou poeta deste novo Brasil e o que eu quero dizer é
 
 `
 
-module.exports = {capitulo}
+module.exports = {capituloDez}

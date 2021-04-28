@@ -1,4 +1,4 @@
-const capitulo = `
+const capituloNove = `
 
 A Pedra da Lua
 <Narração>Mais tarde, ainda na noite do show.
@@ -69,4 +69,4 @@ dentro de você.
 
 `
 
-module.exports = {capitulo}
+module.exports = {capituloNove}

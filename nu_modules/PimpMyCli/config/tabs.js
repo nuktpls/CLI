@@ -11,7 +11,17 @@ const {
 	capituloDois,
 	capituloUm,
 	capituloTres,
-	nuMESSAGEtabThree
+	nuMESSAGEtabThree,
+	capituloQuatro,
+	capituloCinco,
+	capituloSeis,
+	capituloSete,
+	capituloOito,
+	capituloNove,
+	capituloDez,
+	capituloOnze,
+	capituloDoze,
+	capituloTreze
 } = require('../../../data/index')
 // const {capituloDois} = require('../../../data/capituloDois')
 const {heroiVagabundo, goshDev, boiSonoro, ditadoraFacista} = require('../../../data/character')
@@ -89,6 +99,66 @@ const tabChapters = () => {
 		pimpMyCli({
 			agent: 'chapter',
 			subAgent: 3,
+			msg: capituloTres,
+			clear: 2
+		}),
+		pimpMyCli({
+			agent: 'chapter',
+			subAgent: 4,
+			msg: capituloTres,
+			clear: 2
+		}),
+		pimpMyCli({
+			agent: 'chapter',
+			subAgent: 5,
+			msg: capituloTres,
+			clear: 2
+		}),
+		pimpMyCli({
+			agent: 'chapter',
+			subAgent: 6,
+			msg: capituloTres,
+			clear: 2
+		}),
+		pimpMyCli({
+			agent: 'chapter',
+			subAgent: 7,
+			msg: capituloTres,
+			clear: 2
+		}),
+		pimpMyCli({
+			agent: 'chapter',
+			subAgent: 8,
+			msg: capituloTres,
+			clear: 2
+		}),
+		pimpMyCli({
+			agent: 'chapter',
+			subAgent: 9,
+			msg: capituloTres,
+			clear: 2
+		}),
+		pimpMyCli({
+			agent: 'chapter',
+			subAgent: 10,
+			msg: capituloTres,
+			clear: 2
+		}),
+		pimpMyCli({
+			agent: 'chapter',
+			subAgent: 11,
+			msg: capituloTres,
+			clear: 2
+		}),
+		pimpMyCli({
+			agent: 'chapter',
+			subAgent: 12,
+			msg: capituloTres,
+			clear: 2
+		}),
+		pimpMyCli({
+			agent: 'chapter',
+			subAgent: 13,
 			msg: capituloTres,
 			clear: 2
 		})

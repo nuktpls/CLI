@@ -1,4 +1,4 @@
-const capitulo = `
+const capituloTreze = `
 
 Obrigado por lerem até aqui esta aventura. Eu sinceramente
 espero que vocês tenham se divertido no mundo da
@@ -17,4 +17,4 @@ Nos vemos em breve com mais novidades :o)
 
 `
 
-module.exports = {capitulo}
+module.exports = {capituloTreze}

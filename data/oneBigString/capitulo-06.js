@@ -1,4 +1,4 @@
-const capitulo = `
+const capituloSeis = `
 
 Vielas e Becos
 <Narração>Miltinho com mais dois amigos e duas amigas
@@ -30,4 +30,4 @@ pras cabeça, táli?
 
 `
 
-module.exports = {capitulo}
+module.exports = {capituloSeis}
