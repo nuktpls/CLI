@@ -22,8 +22,7 @@ de pivete, senhor. Mas veja bem, você pode escolher. Segue
 em frente. O que passou, passou. Você já despertou a tantos.
 Construiu um lugar para a gente aqui e na próxima Eugenia.
 Uma Eugenia sem morte, sem guerra. Um Eugenia que vale
-mais do que qualquer salto que já demos. Podemos parar por
-aqui.
+mais do que qualquer salto que já demos. Podemos parar por aqui.
 ${yellow('<HeV>')}A pedra forjada pelo poder do nosso grande
 primeiro general está comigo. Todos os sinais apontam para o
 fim dos saltos e das Eugenias. A aliança do mundo geométrico
@@ -39,8 +38,7 @@ seja alto. Agora, para dar início a profecia, você sabe o que é
 preciso fazer.
 ${yellow('<HeV>')}Pô Amarelo, achei que tú não ia lembrar, meu rei. Eu
 não canto essa música há séculos.
-${yellow('<AmareloVagabundo>')}Pra você ver como é um tempo
-especial.
+${yellow('<AmareloVagabundo>')}Pra você ver como é um tempo especial.
 ${yellow('<HeV ação=”cantar, tocar-violão”>')}Estou travando uma
 batalha contra Raul, Renato e Cazu, neste jogo onde nenhum
 de nós vamos perder. Frejat ficou pelo caminho eu agora é

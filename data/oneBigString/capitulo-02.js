@@ -1,4 +1,4 @@
-const {yellow, cyan, blue, red, green} = require('chalk')
+const {heroName, yellow, cyan, blue, red, green} = require('../dependencies')
 
 const capituloDois = `
 ${cyan('Brasil, 2005 do Ano Comum')}
@@ -82,7 +82,7 @@ ${yellow('<Narração>')}Anos se passaram e o Silêncio abandonou o
 Menor, mas para surpresa do destino e do próprio Silêncio, ele
 despertou no irmão do Menor Vagabundo.
 ${yellow('<Narração>')}Uma criança tímida e um desaparecido ilustre.
-Miltinho, de Miltown.
+${heroName}, de Miltown.
 `
 
 module.exports = {capituloDois}

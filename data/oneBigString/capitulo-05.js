@@ -1,10 +1,11 @@
-const {yellow, cyan, blue, red, green, dim} = require('chalk')
+const {heroName, yellow, cyan, blue, red, green} = require('../dependencies')
+
 const capituloCinco = `
 ${cyan('Show do Esquadrão')}
 
-${blue('<Menino>')}Miltinho corre, hoje tem show do Esquadrão. Ele
-não tá aqui? Miltinho?
-${yellow('<Narração>')}Miltinho estava há poucos instantes na laje
+${blue('<Menino>')}${heroName} corre, hoje tem show do Esquadrão. Ele
+não tá aqui? ${heroName}?
+${yellow('<Narração>')}${heroName} estava há poucos instantes na laje
 com um violão na mão, quando ouviu um eco de música vindo
 do centro da cidade e saiu correndo.
 ${yellow('<Narração>')}A cidade de Miltown é conhecida como a

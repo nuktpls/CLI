@@ -53,7 +53,7 @@ const options = {
 		clearAll: {
 			type: 'boolean',
 			default: false,
-			alias: 'clt'
+			alias: 'limpar'
 		},
 		qtdRow: {
 			alias: 'rows',
