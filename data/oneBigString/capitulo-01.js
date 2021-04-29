@@ -28,10 +28,12 @@ quebrou. Tentaram usar mais e menos força, não adiantou. A
 pedra estava reagindo.
 ${yellow('<Narração>')}O país manteve por curto tempo o monopólio
 marítimo da pedra por meio da estatal SangueBRAS. Vários
-países a queriam. O Brasil não se impôs, começamos a vendela. Foi estudada nos principais centros acadêmicos de todo o
+países a queriam. O Brasil não se impôs, começamos a vendela.
+Foi estudada nos principais centros acadêmicos de todo o
 mundo. Os avanços geraram muita discussão e polêmica.
 ${yellow('<Narração>')}Os Russos anunciaram: “Recriamos a pedra.
-Ainda não a temos para fabricação em grande escala, mas recriamos e é questão de tempo para que todos os Russos
+Ainda não a temos para fabricação em grande escala,
+mas recriamos e é questão de tempo para que todos os Russos
 tenham acesso a pedra vermelha gratuitamente”.
 ${yellow('<Narração>')}A jogada deu certo e estampou os jornais do
 mundo inteiro. Após vários rumores de espionagem e uma
@@ -79,7 +81,6 @@ sobrevivência e a corrida pelo domínio do sangue.
 ${yellow('<Narração>')}A reforma agrária aconteceu. Muitos
 abandonaram os grandes centros para pegarem de volta a
 terra que lhes pertencia.
-
 `
 
 module.exports = {capituloUm}
