@@ -1,11 +1,11 @@
-const {heroName, yellow, cyan, blue, red, green} = require('../dependencies')
+const {heroName, yellow, cyan, blue, red, green, heroCity, heroTermn} = require('../dependencies')
 
 const capituloSeis = `
 ${cyan('Vielas e Becos')}
 
-${yellow('<Narração>')}${heroName} com mais dois amigos e duas amigas
+${yellow('<Narração>')}${heroName} com mais duas amigas
 retornam do show cantarolando e atravessando as vielas para
-cortar atalho por entre as favelas de Miltown.
+cortar atalho por entre as favelas de ${heroCity}.
 ${yellow('<Narração>')}Passam pela feira da madrugada. O olhar fixo a
 cada passo, mas na cabeça a música não para.
 ${red('#feiranteUm( [ ‘ação’: ‘gritar’ ] )')} Ó o acarajé! Ó o acarajé!
@@ -17,7 +17,7 @@ ${red('#panquequeiro')} Aqui, pode pedir.
 ${green('<' + heroName + '>')}Pode ser uma panqueca de frango com caterpi.
 ${yellow('<Narração>')}A panqueca passa com maestria de mão em
 mão, uma mordida para cada um. Apanha quem deixar algo
-cair no chão. ${heroName} é o desastrado da turma.
+cair no chão. ${heroName} é ${heroTermn} desastrad${heroTermn} da turma.
 ${blue('<Nat>')}Aí caramba, pô mano, segura direito o barato aí.
 ${red('<Mandinha>')}Não vale, truta, eu comi uma parte só com
 massa.

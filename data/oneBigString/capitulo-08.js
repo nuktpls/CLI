@@ -1,4 +1,14 @@
-const {heroName, yellow, cyan, blue, red, green} = require('../dependencies')
+const {
+	heroName,
+	yellow,
+	cyan,
+	blue,
+	red,
+	green,
+	heroHe,
+	heroTermn,
+	heroA
+} = require('../dependencies')
 const capituloOito = `
 ${cyan('Esquadrão Vagabundo está de volta')}
 
@@ -8,8 +18,8 @@ de seus antecessores. Grandes olhos brancos que rodam e
 ardem feito fogo. Ele não tem as pernas, possui propulsores
 que emanam um jato colorido que não queima e nem faz
 barulho, nem venta. Tecnologia oculta da malha geométrica.
-${yellow('<HeV>')}Lua, você disse que não teria GADO por aqui. Havia
-vários no caminho, lá embaixo.
+${yellow('<HeV>')}Lua, você disse que não teria GADO por aqui.
+Haviam vários no caminho, lá embaixo.
 ${cyan('<Lua>')}Ainda bem que você conhece melhor do que
 qualquer um essas favelas.
 ${yellow('<HeV>')}Faz mais de um ano desde a última reunião de
@@ -19,17 +29,15 @@ semanas, Lua. E nem falou sobre essa reuniãozinha de vocês
 aqui no meu barraco. Então já tinha tudo planejado?
 ${cyan('<Lua>')}${heroName}, por favor, este é o nosso líder Herói
 Vagabundo.
-${yellow('<HeV>')}Você é o garoto, então? Você tem praticado
-meditação?
+${yellow('<HeV>')}Você é ${heroTermn} garot${heroTermn}, então?
+Você tem praticado meditação?
 ${green('<' + heroName + '>')}Ficar quieto sem fazer nada? Não consigo não.
-Sou elétrico.
-${yellow('<HeV>')}Com quantos baralhos você entra na malha
-geométrica?
+Sou elétric${heroTermn}.
+${yellow('<HeV>')}Com quantos baralhos você entra na malha geométrica?
 ${green('<' + heroName + '>')}Eu sou melhor com o violão e com a caneta,
-cada um é bom na sua própria medida. Não sei se você
-entende isso. Não sei o porquê de estarmos falando disso.
-${yellow('<HeV>')}Você não sabe o porquê? Você sabe de alguma
-coisa?
+cada um é bom na sua própria medida. Não sei se você entende isso.
+Não sei o porquê de estarmos falando disso.
+${yellow('<HeV>')}Você não sabe o porquê? Você sabe de alguma coisa?
 ${yellow('<Narração>')}Herói Vagabundo sai e é seguido pelos seus.
 Lua está preocupada e ${heroName} confuso.
 ${yellow('<Narração>')}Na cozinha Herói come um prato de arroz e
@@ -37,32 +45,29 @@ feijão com farinha.
 ${yellow('<AmareloVagabundo>')}O show foi um sucesso e mais
 importante, nosso número de mentes infiltradas foi maior
 desta vez. Isso vai ser ótimo para as pesquisas.
-${yellow('<HeV>')}Já temos novos nativos. Acordam cada vez mais
-jovens.
+${yellow('<HeV>')}Já temos novos nativos. Acordam cada vez mais jovens.
 ${yellow('<AmareloVagabundo>')}Que maravilha, já temos um exército.
 ${yellow('<Narração>')}Todos se animam com as boas notícias.
 ${yellow('<MenorVagabundo>')}Degenerados, Normais, Ratos, Santos,
-Chinelo e Papelão? Radicais, ou Sindicatos? Quem está
-conosco?
+Chinelo e Papelão? Radicais, ou Sindicatos? Quem está conosco?
 ${yellow('<HeV>')}Estamos sozinhos. Disseram que não querem saltar
-dessa vez. Eles aceitaram a Eugenia.
+dessa vez. Eles aceitaram a Eugenia da Ditadora.
 ${green('<' + heroName + '>')}E vocês vão saltar, é? Tipo, versionar?
-${cyan('<Lua>')}${heroName}, querido, você pode ligar a proteção da
-casa, meu truta? Bem no centro do Brasil beta, ao noroeste de
-Brasóleo, depois da floresta. Nós resgatamos a primeira pedra
-branca.
+${cyan('<Lua>')}${heroName}, querid${heroTermn}, você pode ligar
+a proteção da casa, meu truta? Bem no centro do Brasil beta,
+ao noroeste de Brasóleo, depois da floresta. Nós resgatamos
+a primeira pedra branca.
 ${yellow('<Narração>')}Menor Vagabundo se levanta do chão e coloca
-sob a mesa uma pedra branca, brilhante, do tamanho e
-formato de um coração. Com uma inscrição em dialeto não
-conhecido nele.
+sob a mesa uma pedra branca, brilhante,
+do tamanho e formato de um coração. Com uma inscrição em dialeto
+não conhecido nele.
 ${green('<' + heroName + '>')}Que linda.
-${yellow('<ZóinVagabundo>')}A Deusa Celeste revelou os sinais.
-Chegou a hora.
+${yellow('<ZóinVagabundo>')}A Deusa Celeste revelou os sinais. Chegou a hora.
 ${yellow('<PernaVagabundo>')}Os filhos da besta despertaram e as
 Crianças CTO’s estão sendo preparadas, como foi profetizado.
-${yellow('<AmareloVagabundo>')}”Quando crianças despertarem
+${yellow('<AmareloVagabundo>')}"Quando crianças despertarem
 Silêncio e as três torres menores pegarem fogo, o domínio da
-ditadora irá acabar.”
+ditadora irá acabar."
 ${green('<' + heroName + '>')}Que ditadora? E quais três torres são essas?
 ${yellow('<NovinhaVagabundo>')}Ele está falando dos filhos do Boi,
 que herdaram o poder do pai e despertaram o Silêncio de
@@ -77,9 +82,8 @@ ${yellow('<XMatematx>')}E não? Vamos ver. É assim que se fala.
 ${yellow('<NegãoVagabundo>')}Senta aí, herói tchunai tchunum.
 ${yellow('<MenorVagabundo>')}Moleque, na véra agora. Se a gente
 reunir o Esquadrão de todo Brasil beta.
-${yellow('<HeróiVagabundo>')}Mas é só isso que tá tendo mesmo.
-${yellow('<AmareloVagabundo>')}E Deus sabe que os melhores não
-estão aqui.
+${yellow('<HeróiVagabundo>')}Mas é só isso que tá tendo mesmo. Só a gente.
+${yellow('<AmareloVagabundo>')}E Deus sabe que os melhores não estão aqui.
 ${yellow('<ZóinVagabundo>')}Eu sou altamente qualificado e treinado.
 Com certificados em qualquer estratégia que o GADO pode
 pensar em usar. Qualquer Vagabundo pode derrubar todos
@@ -108,18 +112,21 @@ continuar a ser vítima ou vamos tomar o Brasil beta para nós?
 ${yellow('<AmareloVagabundo>')}É, mas só temos metade da pedra
 branca da profecia. E o menino ainda não despertou.
 ${green('<' + heroName + '>')}Tem mais gente nessa história?
-${cyan('<Lua>')}Isso você deixa comigo que o menino desperta ainda
-hoje.
+${cyan('<Lua>')}Isso você deixa comigo que ${heroTermn} menin${heroTermn}
+desperta ainda hoje.
 ${yellow('<MenorVagabundo>')}A pedra me fez o bem dela já. Se vocês
-me derem licença. Eu não quero mais participar disso por
-agora. Vai ser um dia cheio amanhã.
+me derem licença. Eu não quero mais participar disso por agora.
+Vai ser um dia cheio amanhã.
 ${yellow('<HeV>')}Serão horas intensas pra você, mas é bom assim.
 Precisamos disso.
+${yellow('<MenorVagabundo>')}Só não se esqueça, Brasóleo não é lugar
+pro meu maninho distraído, Herói. E você sabe disso.
+Já temos algumas pessoas em vista. Então, se liga.
 ${yellow('<NegãoVagabundo>')}Vou aproveitar a deixa, estou meio
-estufado. Vou lá para o outro barraco dar uma descansada.
-Essa noite fiquei cuidando das crianças e vocês sabem como
-que é criança de Vagabundo, tem que treinar o dia inteiro. Tô
-só o pó vermelho, cansadão.
+estufado e tenho que trocar o turno da isca.
+Vou lá para o outro barraco dar uma descansada. Essa noite fiquei
+cuidando das crianças e vocês sabem como que é criança de Vagabundo,
+tem que treinar o dia inteiro. Tô só o pó vermelho, cansadão.
 ${yellow('<Narração>')}Menor Vagabundo se levanta e sai do barraco.
 Negão Vagabundo também sai.
 ${cyan('<Lua>')}Foi fundida pelo primeiro general do Esquadrão,
@@ -167,20 +174,18 @@ ${yellow('<NovinhaVagabundo>')}Precisamos de um padre, um ninja,
 ou algo assim?
 ${green('<' + heroName + '>')}Um sacerdote, pra ser preciso. Tem que ser
 muito bom.
-${yellow('<RastaVagabundo>')}Você é sacerdote?
-${green('<' + heroName + '>')}Eu não. Bem, já fiz umas missões e fui ordenado,
+${yellow('<RastaVagabundo>')}Você é ${heroA}?
+${green('<' + heroName + '>')}Eu não. Bem, já fiz umas missões e fui ordenad${heroTermn},
 mas não exerço.
 ${yellow('<RastaVagabundo>')}Tá aí, tudo o que precisamos. A profecia
-se cumpriu. Um sacerdote.
-${green('<' + heroName + '>')}Não, não. Eu não sou mais um sacerdote. Nunca
-mais ministrei na vida.
-${yellow('<AmareloVagabundo>')}Ele não vai saber ler códigos antigos,
-ainda mais códigos tão avançados que nem a Lua consegue
-ler. Quanto mais executá-los. Ele não tem nada de sacerdote.
+se cumpriu. ${heroName} ${heroA} portador${heroTermn !== 'o' ? heroTermn : ''} do sacerdócio.
+${green('<' + heroName + '>')}Não, não. Eu não sou mais um sacerdote.
+Nunca mais ministrei na vida.
+${yellow('<AmareloVagabundo>')}Sem chances de ${heroHe} não vai saber
+ler códigos antigos, ainda mais códigos tão avançados
+que nem a Lua consegue ler. Quanto mais executá-los.
+É uma pena, mas ${heroHe} não tem nada de sant${heroTermn}.
 ${green('<' + heroName + '>')}Tô com fome.
-${yellow('<MenorVagabundo>')}Brasóleo não é lugar pro meu maninho
-distraído, Herói. E você sabe disso. Já temos algumas pessoas
-em vista.
 ${yellow('<Narração>')}Olhares se cruzam. Há tensão no ar.
 `
 

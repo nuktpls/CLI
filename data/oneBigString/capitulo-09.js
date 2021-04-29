@@ -1,4 +1,4 @@
-const {heroName, yellow, cyan, blue, red, green} = require('../dependencies')
+const {heroName, yellow, cyan, blue, red, green, heroHe} = require('../dependencies')
 const capituloNove = `
 ${cyan('A Pedra da Lua')}
 

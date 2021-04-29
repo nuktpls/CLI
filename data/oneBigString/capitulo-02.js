@@ -1,4 +1,15 @@
-const {heroName, yellow, cyan, blue, red, green} = require('../dependencies')
+const {
+	heroName,
+	yellow,
+	cyan,
+	blue,
+	red,
+	green,
+	heroTermn,
+	heroTermnAO,
+	heroCity,
+	heroA
+} = require('../dependencies')
 
 const capituloDois = `
 ${cyan('Brasil, 2005 do Ano Comum')}
@@ -64,7 +75,7 @@ propaganda e marketing. E os seus escândalos foram
 esquecidos. O que ficou no lugar foram as lembranças de seus
 feitos e de sua arte.
 ${yellow('<Narração>')}Não se passou muito tempo para que em um
-barraco nos subúrbios de Miltown um novo portador do
+barraco nos subúrbios de ${heroCity} um novo portador do
 Silêncio tivesse sido escolhido.
 ${yellow('<Narração>')}O Silêncio tem vontade própria e tomou uma
 forma sem muita resistência para ganhar força e
@@ -80,9 +91,9 @@ o Silêncio se calou. Era hora de despertar em alguém com
 mais voz.
 ${yellow('<Narração>')}Anos se passaram e o Silêncio abandonou o
 Menor, mas para surpresa do destino e do próprio Silêncio, ele
-despertou no irmão do Menor Vagabundo.
-${yellow('<Narração>')}Uma criança tímida e um desaparecido ilustre.
-${heroName}, de Miltown.
+despertou n${heroTermn} irm${heroTermnAO} do Menor Vagabundo.
+${yellow('<Narração>')}Uma criança tímida e ${heroA} desaparecid${heroTermn} ilustre.
+${heroName}, de ${heroCity}.
 `
 
 module.exports = {capituloDois}

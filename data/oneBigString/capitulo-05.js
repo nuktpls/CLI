@@ -1,14 +1,14 @@
-const {heroName, yellow, cyan, blue, red, green} = require('../dependencies')
+const {heroName, yellow, cyan, blue, red, green, heroCity, heroHe} = require('../dependencies')
 
 const capituloCinco = `
 ${cyan('Show do Esquadrão')}
 
-${blue('<Menino>')}${heroName} corre, hoje tem show do Esquadrão. Ele
-não tá aqui? ${heroName}?
+${blue('<Menino>')}${heroName} corre, hoje tem show do Esquadrão.
+Ah, ${heroHe} não tá aqui? ${heroName}?
 ${yellow('<Narração>')}${heroName} estava há poucos instantes na laje
 com um violão na mão, quando ouviu um eco de música vindo
 do centro da cidade e saiu correndo.
-${yellow('<Narração>')}A cidade de Miltown é conhecida como a
+${yellow('<Narração>')}A cidade de ${heroCity} é conhecida como a
 cidade da luz. E de longe dá para saber o porquê dessa fama.
 A cidade que nunca anoitece tem tanta luz que em dias
 nublados, como no de hoje, o céu é apenas um clarão azulado.
