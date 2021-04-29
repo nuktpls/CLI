@@ -1,9 +1,9 @@
-const {yellow, cyan, blue, red, green, dim} = require('chalk')
+const {heroName, yellow, cyan, blue, red, green, heroHe} = require('../dependencies')
 const capituloDez = `
 ${cyan('A Canção do Herói')}
 
-${yellow('<AmareloVagabundo>')}Você sabe que ele não tem nada de
-Silêncio e mesmo quando tiver, ele não tá preparado. Tem
+${yellow('<AmareloVagabundo>')}Você sabe que ${heroHe} não tem nada de
+Silêncio e mesmo quando tiver, ${heroHe} não tá preparado. Tem
 sido assim em todos os saltos. Parece que essa vai ser a última
 vez que tentamos. Eles estão mais perto do início cada vez. E
 já perdemos muitos dos bons para o GADO. Presos no tártaro.
