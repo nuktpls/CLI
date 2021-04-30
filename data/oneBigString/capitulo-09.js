@@ -66,7 +66,7 @@ ${cyan('<Lua>')}Está aqui, ele pediu para te entregar. Você agora é o
 portador da pedra da lua, ${heroName}. Que toda energia brilhe
 dentro de você.
 ${blue('<' + heroName + '>')}Eu vou fazer um desejo. Desejo que...
-${yellow('<Narração>')}Ele fecha os olhos e faz um pedido.
+${yellow('<Narração>')}${heroName} fecha os olhos e faz um pedido.
 `
 
 module.exports = {capituloNove}

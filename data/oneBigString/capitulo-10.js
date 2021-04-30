@@ -3,8 +3,8 @@ const capituloDez = `
 ${cyan('A Canção do Herói')}
 
 ${yellow('<AmareloVagabundo>')}Você sabe que ${heroHe} não tem nada de
-Silêncio e mesmo quando tiver, ${heroHe} não tá preparado. Tem
-sido assim em todos os saltos. Parece que essa vai ser a última
+Silêncio e mesmo quando tiver, ${heroHe} não tá preparado.
+Tem sido assim em todos os saltos. Parece que essa vai ser a última
 vez que tentamos. Eles estão mais perto do início cada vez. E
 já perdemos muitos dos bons para o GADO. Presos no tártaro.
 Pra ser sincero, sei que não estou em posição para falar, mas
@@ -21,7 +21,7 @@ ${yellow('<AmareloVagabundo>')}Pivé... desculpa, quase que te chamo
 de pivete, senhor. Mas veja bem, você pode escolher. Segue
 em frente. O que passou, passou. Você já despertou a tantos.
 Construiu um lugar para a gente aqui e na próxima Eugenia.
-Uma Eugenia sem morte, sem guerra. Um Eugenia que vale
+Uma Eugenia sem morte, sem guerra. Uma Eugenia que vale
 mais do que qualquer salto que já demos. Podemos parar por aqui.
 ${yellow('<HeV>')}A pedra forjada pelo poder do nosso grande
 primeiro general está comigo. Todos os sinais apontam para o
