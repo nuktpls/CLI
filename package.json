@@ -1,6 +1,6 @@
 {
   "name": "nuktpls-cli",
-  "version": "0.0.9",
+  "version": "0.0.6",
   "bin": {
     "nuktpls": "index.js"
   },
@@ -34,9 +34,19 @@
   "dependencies": {
     "chalk": "^4.1.0",
     "clear-any-console": "^1.16.2",
+    "cli-table3": "^0.6.0",
     "dotenv": "^8.2.0",
+    "first-run": "^2.0.0",
+    "gradient-string": "^1.2.0",
+    "inquirer": "^8.0.0",
     "log-symbols": "^4.1.0",
-    "meow": "^9.0.0"
+    "log-update": "^4.0.0",
+    "meow": "^9.0.0",
+    "ora": "^5.4.0",
+    "shelljs": "^0.8.4",
+    "term-size": "^2.2.1",
+    "terminal-image": "^1.2.1",
+    "terminal-kit": "^2.0.7"
   },
   "devDependencies": {
     "prettier": "^2.2.1"

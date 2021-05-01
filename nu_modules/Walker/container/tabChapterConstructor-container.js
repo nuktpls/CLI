@@ -7,25 +7,28 @@ const tabChapterConstructor = (page, qtdRow, totalRows, maybePluralize, totalFin
 	const pluralPrimeiras = maybePluralize(totalFinal, labelShowing)
 
 	// Label Tab Chapter component
-	labelTabChapter(pluralPrimeiras, totalFinal, totalRows)
+	const printLabel = () => labelTabChapter(pluralPrimeiras, totalFinal, totalRows)
 
 	// array walker
 	splitText.map(nowLine => {
 		countLine++
+		if (countLine === 1) {
+			printLabel()
+		}
 		const digitsCount = totalFinal.toString().length
 		const digitPattern = countLine.toString().padStart(digitsCount, '0')
 
-		if (countLine <= totalFinal) {
-			// tabChapter lines print component
-			return setTimeout(function () {
-				tabChapter(page, digitPattern, qtdRow, nowLine)
-				// console.log(digitPattern)
-			}, 100)
+		// tabChapter lines print component
+		const printChapter = () => {
+			if (countLine <= totalFinal) {
+				return tabChapter(page, digitPattern, qtdRow, nowLine)
+			}
+		}
+		printChapter()
+		if (countLine === totalFinal) {
+			printLabel()
 		}
 	})
-	setTimeout(function () {
-		labelTabChapter(pluralPrimeiras, totalFinal, totalRows)
-	}, 100)
 }
 
 module.exports = {

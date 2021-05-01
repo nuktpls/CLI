@@ -1,4 +1,5 @@
 const {dim} = require('chalk')
+// var term = require('terminal-kit').terminal
 
 const tabChapter = (page, countLine, qtdRow, nowLine) => {
 	return console.log(

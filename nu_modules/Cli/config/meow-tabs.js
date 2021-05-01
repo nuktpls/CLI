@@ -80,6 +80,11 @@ const options = {
 			type: 'boolean',
 			default: false
 		},
+		zumba: {
+			alias: 'escolhedor',
+			type: 'boolean',
+			default: false
+		},
 		character: {
 			alias: 'personagem',
 			type: 'string',

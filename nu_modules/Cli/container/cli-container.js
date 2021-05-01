@@ -1,6 +1,6 @@
 const meow = require('meow')
 const debug = require('../../PimpMyCli/container/debug')
-const {sceneWelcome, sceneChapter, sceneCharacter} = require('./initCli-container')
+const {sceneChooser, sceneWelcome, sceneChapter, sceneCharacter} = require('./initCli-container')
 const {helpText} = require('../components/helpText')
 const {options} = require('../config/meow-tabs')
 
@@ -8,6 +8,7 @@ const helper = meow(helpText, options)
 
 helper.flags.chapter = helper.flags.chapter || helper.flags.capítulo
 helper.flags.capítulo = helper.flags.capítulo || helper.flags.chapter
+const zumba = helper.flags.zumba
 const welcome = helper.flags.welcome
 const capitulo = helper.flags.capítulo || helper.flags.chapter
 const qtdRow = helper.flags.qtdRow
@@ -27,6 +28,9 @@ const characterBirth = helper.flags.birth
 const characterBirthplace = helper.flags.birthplace
 
 async function goAsync() {
+	// if (hardInjection) {
+	// 	sceneWelcome(true, helper.flags)
+	// }
 	if (welcome) {
 		sceneWelcome(clear, helper.flags)
 	}
@@ -45,6 +49,11 @@ async function goAsync() {
 			characterBirth,
 			characterBirthplace
 		)
+	}
+
+	if (zumba) {
+		sceneChooser(zumba)
+		// console.log('choise')
 	}
 	helper.input.includes('help') && helper.showHelp(0)
 	helper.input.includes('versão') && helper.showVersion(0)

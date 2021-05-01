@@ -2,6 +2,8 @@ const consoleClear = require('clear-any-console')
 const {multipleArrayPrint} = require('../components/multipleArray')
 
 const constructorTabMultipleArrays = (tab, clearTab, flagSubAgent) => {
+	// console.log('flagSubAgent')
+	// console.log(flagSubAgent)
 	if (!flagSubAgent && !flagSubAgent.welcome) {
 		return null
 	}
@@ -22,9 +24,11 @@ const constructorTabMultipleArrays = (tab, clearTab, flagSubAgent) => {
 
 		// console.log('flagSubAgent.subAgent')
 		// console.log(flagSubAgent)
-		setTimeout(() => {
-			return multipleArrayPrint(nowLogMultipleArrays)
-		}, 10)
+		// console.log(nowLogMultipleArrays)
+		multipleArrayPrint(nowLogMultipleArrays)
+		// setTimeout(() => {
+		// 	return multipleArrayPrint(nowLogMultipleArrays)
+		// }, 10)
 	})
 }
 

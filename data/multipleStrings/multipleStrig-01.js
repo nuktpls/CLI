@@ -8,11 +8,6 @@ const nuTEIASabre = `
 🕸 <TE[i]AS>>>
 `
 const nuMESSAGE = `
-	NÜktpls é o Deus do primeiro universo literário
-	e educacional cibernético do mundo.
-	Se você o tratar com respeito e reverência,
-	ele te guiará nessa aventura cibernética.
-
 	Capítulo 01 - O Sangue
 	Capítulo 02 - Brasil, 2005 do ano comum
 	Capítulo 03 - Lua, a Famosa Hacker
