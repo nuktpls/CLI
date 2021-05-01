@@ -5,15 +5,17 @@ const characterLog = (tab, character) => {
 		// console.log(tabNow.msg)
 		// console.log('tabNow.cleartabNow.cleartabNow.clear')
 		if (tabNow.moreOptions.clear === 2) {
-			consoleClear()
+			// consoleClear()
 		}
 
 		if (tabNow.moreOptions.subAgent === character) {
 			const vaiQvai = setTimeout(function () {
 				console.log(tabNow.msg)
 			}, 100)
-			return vaiQvai
+			return console.log(tabNow.msg)
 		}
+		// console.log(tabNow.moreOptions.subAgent)
+
 		// console.log('tabNow.character')
 		// console.log(tabNow.character)
 		// console.log('tabNow.subAgent')

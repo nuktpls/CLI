@@ -28,21 +28,13 @@ const sceneWelcome = (clearTab, flags) => {
 const sceneChapter = (chapter, page, qtdRow, first, next, rangeBegin, latest) => {
 	constructorTabChapter(tabChapters(), chapter, page, qtdRow, first, next, rangeBegin, latest)
 }
-const sceneCharacter = (character, characterName, gender, age, version, birth, birthplace) => {
-	constructorTabCharacter(
-		tabCharacters(),
-		character,
-		characterName,
-		gender,
-		age,
-		version,
-		birth,
-		birthplace
-	)
+const sceneCharacter = character => {
+	constructorTabCharacter(tabCharacters(), character)
 }
 const sceneChooser = () => {
 	const laFunc = (aqui, eaqui, eaquimesmo) => constructorTabMultipleArrays(aqui, eaqui, eaquimesmo)
-	return constructorTabChooser(laFunc, tabMULTIPLEarrays())
+	const lesCaras = (um, dois) => constructorTabCharacter(um, dois)
+	return constructorTabChooser(laFunc, tabMULTIPLEarrays, lesCaras, tabCharacters())
 	// constructorTabMultipleArrays(tabMULTIPLEarrays(), true, {welcome: true})
 }
 

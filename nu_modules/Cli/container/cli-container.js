@@ -32,15 +32,15 @@ async function goAsync() {
 	// 	sceneWelcome(true, helper.flags)
 	// }
 	if (welcome) {
-		sceneWelcome(clear, helper.flags)
+		return sceneWelcome(clear, helper.flags)
 	}
 
 	if (capitulo) {
-		sceneChapter(capitulo, page, qtdRow, first, next, rangeBegin, latest)
+		return sceneChapter(capitulo, page, qtdRow, first, next, rangeBegin, latest)
 	}
 
 	if (character) {
-		sceneCharacter(
+		return sceneCharacter(
 			character,
 			characterName,
 			characterGender,
@@ -50,11 +50,13 @@ async function goAsync() {
 			characterBirthplace
 		)
 	}
+	sceneChooser(zumba)
 
-	if (zumba) {
-		sceneChooser(zumba)
-		// console.log('choise')
-	}
+	// if (zumba) {
+	// 	sceneChooser(zumba)
+	// 	// console.log('choise')
+	// }
+	// console.log(helper.flags)
 	helper.input.includes('help') && helper.showHelp(0)
 	helper.input.includes('versão') && helper.showVersion(0)
 	helper.flags.debug && debug(helper.flags.debug, helper.flags, helper.input)

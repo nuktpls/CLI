@@ -548,7 +548,7 @@ var term = require('terminal-kit').terminal
 // const now = require('../../../data/index')
 
 var term = require('terminal-kit').terminal
-const constructorTabChooser = (laFunc, tabMULTIPLEarrays) => {
+const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacters) => {
 	term.clear()
 
 	term.on('key', function (name, matches, data) {
@@ -559,20 +559,22 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays) => {
 		}
 	})
 
-	var items = ['Welcome', 'Livro', 'Sumário', 'Tarefa', 'Ferramentas', 'Ajuda']
+	var items = ['Welcome', 'Personagem', 'Sumário', 'Tarefa', 'Ferramentas', 'Ajuda']
 
 	var options = {
-		y: 19, // the menu will be on the top of the terminal
+		y: 1, // the menu will be on the top of the terminal
 		style: term.inverse,
 		selectedStyle: term.dim.blue.bgGreen
 	}
 
-	const menuRegistry = () =>
+	const menuRegistry = colorMenuHack =>
 		term.singleLineMenu(items, options, function (error, response) {
 			// 	response.selectedIndex,
-
+			if (colorMenuHack) {
+				options.style = colorMenuHack
+			}
 			if (response.selectedText === 'Welcome') {
-				term.clear()
+				// term.clear()
 				// const zin = () => tabMULTIPLEarrays()
 				// const exitProcss = zinga =>
 				// 	process.on('exit', code => {
@@ -581,8 +583,10 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays) => {
 				// console.log('tabMULTIPLEarrays')
 				// console.log(tabMULTIPLEarrays)
 				setTimeout(() => {
-					laFunc(tabMULTIPLEarrays, true, [{welcome: true}])
-					process.exit()
+					laFunc(tabMULTIPLEarrays(), true, [{welcome: true}])
+					return process.exit()
+
+					// menuRegistry()
 				}, 10)
 
 				// exitProcss(buffer)
@@ -591,11 +595,43 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays) => {
 				// Você escolheu: Welcome
 				// 			`)
 			}
-			if (response.selectedText === 'Livro') {
+			if (response.selectedText === 'Personagem') {
 				term.clear()
-				console.log(`
-Você escolheu: Livro
-			`)
+
+				term.cyan('Selecione o livro para ler.\n')
+
+				var items = ['a. Herói Vagabundo', 'b. Ditadora Facista', 'c. @goshDev', 'd. Boi Sonoro']
+
+				term.singleColumnMenu(items, function (error, response) {
+					term('\n').eraseLineAfter.green(
+						'#%s selected: %s (%s,%s)\n',
+						response.selectedIndex,
+						response.selectedText,
+						response.x,
+						response.y
+					)
+					// console.log(`Você escolheu: Personagem ${response.selectedText}`)
+					if (response.selectedIndex === 0) {
+						term.clear()
+						lesCaras(tabCharacters, 'heroiVagabundo')
+						process.exit()
+					}
+					if (response.selectedIndex === 1) {
+						term.clear()
+						lesCaras(tabCharacters, 'ditadoraFacista')
+						process.exit()
+					}
+					if (response.selectedIndex === 2) {
+						term.clear()
+						lesCaras(tabCharacters, 'goshDev')
+						process.exit()
+					}
+					if (response.selectedIndex === 3) {
+						term.clear()
+						lesCaras(tabCharacters, 'boiSonoro')
+						process.exit()
+					}
+				})
 			}
 			if (response.selectedText === 'Sumário') {
 				term.clear()
@@ -623,7 +659,7 @@ Você escolheu: Ajuda
 			`)
 			}
 
-			menuRegistry()
+			// menuRegistry()
 		})
 
 	menuRegistry()
@@ -650,10 +686,10 @@ Você escolheu: Ajuda
 		switch (key) {
 			case 'UP':
 				term.up(1)
-				term.scrollDown(1)
+				// term.scrollDown(1)
 				break
 			case 'DOWN':
-				term.scrollUp(1)
+				// term.scrollUp(1)
 				term.down(1)
 				break
 			// case 'LEFT':

@@ -1,16 +1,6 @@
 const {characterLog} = require('../components/character')
-const constructorTabCharacter = (
-	tab,
-	character,
-	name,
-	gender,
-	age,
-	version,
-	birth,
-	birthplace,
-	clearTab
-) => {
-	return characterLog(tab, character, name, gender, age, version, birth, birthplace, clearTab)
+const constructorTabCharacter = (tab, character) => {
+	return characterLog(tab, character)
 }
 
 module.exports = {
