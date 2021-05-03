@@ -559,7 +559,7 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacter
 		}
 	})
 
-	var items = ['Welcome', 'Personagem', 'Sumário', 'Tarefa', 'Ferramentas', 'Ajuda']
+	var items = ['Welcome', 'Personagem', 'Capítulos', 'Tarefa', 'Ferramentas', 'Ajuda']
 
 	var options = {
 		y: 1, // the menu will be on the top of the terminal
@@ -598,7 +598,7 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacter
 			if (response.selectedText === 'Personagem') {
 				term.clear()
 
-				term.cyan('Selecione o livro para ler.\n')
+				term.cyan('\n\nSelecione o personagem para ler o seu resumo.\n')
 
 				var items = ['a. Herói Vagabundo', 'b. Ditadora Facista', 'c. @goshDev', 'd. Boi Sonoro']
 
@@ -633,10 +633,10 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacter
 					}
 				})
 			}
-			if (response.selectedText === 'Sumário') {
+			if (response.selectedText === 'Capítulos') {
 				term.clear()
 				console.log(`
-Você escolheu: Sumário
+Você escolheu: Capítulos
 			`)
 			}
 
@@ -659,7 +659,7 @@ Você escolheu: Ajuda
 			`)
 			}
 
-			// menuRegistry()
+			menuRegistry()
 		})
 
 	menuRegistry()
