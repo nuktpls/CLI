@@ -45,7 +45,9 @@ async function goAsync() {
 		!firstRun() ? sceneChooser(zumba) : firstRun.clear()
 	}
 
-	firstRun() ? sceneFirstRun(clear) : null
+	if (firstRun()) {
+		return sceneFirstRun(clear)
+	}
 
 	if (welcome) {
 		return sceneWelcome(clear, helper.flags)

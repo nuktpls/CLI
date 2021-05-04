@@ -1,7 +1,7 @@
 const logUpdate = require('log-update')
 const welcomeScreen = (olhosFunc, sombrancelhaFunc) => {
-	const framesOne = ['__', '__', '--', '--']
-	const frames = ['o', 'O', '-', '-']
+	const framesOne = [`------`, `------`, `------`, `------`, `------`, `------`, `______`, `______`, `______`]
+	const frames = ['( o )', '( o )', '( o )', '(o  )', '(  o)', '(  o)', '( - )', '( - )', '( - )']
 	const olhos = olhosFunc(frames)
 	const sombrancelha = sombrancelhaFunc(framesOne)
 	logUpdate(
@@ -16,7 +16,7 @@ const welcomeScreen = (olhosFunc, sombrancelhaFunc) => {
 				_.i.. ${olhos} . ${olhos} ..i._
 
 
-			Bem-vindo ao Brasil beta 2.0.X.X
+			  Bem-vindo ao Brasil beta 2.0.X.X
 
 
 

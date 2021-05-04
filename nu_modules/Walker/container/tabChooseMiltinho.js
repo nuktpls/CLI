@@ -1,6 +1,7 @@
 const dotenv = require('dotenv')
 const fs = require('fs')
-
+const term = require('terminal-kit').terminal
+const clearConsole = require('clear-any-console')
 const chooseMiltinho = () => {
 	const file = dotenv.parse(fs.readFileSync('./.env.staging'))
 	const dataInsert = `HERO_NAME=${file.HERO_NAME}
@@ -12,12 +13,15 @@ HERO_INIT_NAME=${file.HERO_INIT_NAME}`
 
 	const filename = './.env'
 	//  appendFileSync
-	fs.writeFileSync(filename, dataInsert, 'utf-8', function (err) {
-		if (err) return console.log(err)
-		console.log(`${dataInsert} > ${filename}`)
-	})
+	fs.writeFileSync(filename, dataInsert, 'utf-8')
+	const fileFinal = dotenv.parse(fs.readFileSync('./.env'))
 
-	console.log(dataInsert)
+	const heroName = fileFinal.HERO_NAME
+	const heroTermn = fileFinal.HERO_TERMN
+	clearConsole()
+	term.cyan(`Olá ${heroName}. Você já pode iniciar o sistema.\n`)
+	term.green(`\nDigite "nuktpls" e seja bem-vind${heroTermn}!\n\n`)
+
 	process.exit()
 }
 module.exports = {chooseMiltinho}

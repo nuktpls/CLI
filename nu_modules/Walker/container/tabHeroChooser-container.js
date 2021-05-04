@@ -12,13 +12,13 @@ const heroChooserScene = this__Scene => {
 	term.cyan(fraseDois)
 
 	term.singleColumnMenu(heroChoose, function (error, response) {
-		term('\n').eraseLineAfter.green(
-			'#%s selected: %s (%s,%s)\n',
-			response.selectedIndex,
-			response.selectedText,
-			response.x,
-			response.y
-		)
+		// term('\n').eraseLineAfter.green(
+		// 	'#%s selected: %s (%s,%s)\n',
+		// 	response.selectedIndex,
+		// 	response.selectedText,
+		// 	response.x,
+		// 	response.y
+		// )
 		if (response.selectedIndex === 0) {
 			chooseMiltinho()
 		}

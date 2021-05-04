@@ -136,7 +136,7 @@ Sou maneirinh${green(heroTermn)}!
 									// chooseMiltinho()
 									clearConsole()
 									term.cyan(`Olá ${heroName}. Você já pode iniciar o sistema.\n`)
-									term.green(`\nDigite "nuktpls" e seja bem vind${heroTermn}\n\n`)
+									term.green(`\nDigite "nuktpls" e seja bem-vind${heroTermn}\n\n`)
 									process.exit()
 								}
 								if (response.selectedIndex === 1) {
