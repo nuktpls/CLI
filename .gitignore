@@ -177,3 +177,5 @@ assets/img/.DS_Store
 # No lock files.
 package-lock.json
 yarn.lock
+
+!.env.staging

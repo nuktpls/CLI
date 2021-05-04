@@ -5,7 +5,7 @@ var resolvePath = require('resolve-path')
 
 const clearConsole = require('clear-any-console')
 const chooseMiltinho = () => {
-	    var fullpath = resolvePath('./', '.env.staging')
+	var fullpath = resolvePath('./', '.env.staging')
 
 	const file = dotenv.parse(fs.readFileSync(fullpath))
 	const dataInsert = `HERO_NAME=${file.HERO_NAME}
@@ -28,4 +28,4 @@ HERO_INIT_NAME=${file.HERO_INIT_NAME}`
 
 	process.exit()
 }
-module.exports = {chooseMiltinho}
+module.exports = { chooseMiltinho }
