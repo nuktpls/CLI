@@ -1,11 +1,11 @@
 const dotenv = require('dotenv')
 const fs = require('fs')
 const term = require('terminal-kit').terminal
-var resolvePath = require('resolve-path')
+var path = require('path');
 
 const clearConsole = require('clear-any-console')
 const chooseMiltinho = () => {
-	var fullpath = resolvePath('./', '.env.staging')
+	var fullpath = path.resolve('./.env.staging')
 
 	const file = dotenv.parse(fs.readFileSync(fullpath))
 	const dataInsert = `HERO_NAME=${file.HERO_NAME}
