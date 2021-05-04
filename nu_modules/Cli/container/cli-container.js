@@ -1,6 +1,14 @@
 const meow = require('meow')
 const debug = require('../../PimpMyCli/container/debug')
-const {sceneChooser, sceneWelcome, sceneChapter, sceneCharacter} = require('./initCli-container')
+const firstRun = require('first-run')
+require('./keyEvents-container')
+const {
+	sceneFirstRun,
+	sceneChooser,
+	sceneWelcome,
+	sceneChapter,
+	sceneCharacter
+} = require('./initCli-container')
 const {helpText} = require('../components/helpText')
 const {options} = require('../config/meow-tabs')
 
@@ -31,6 +39,14 @@ async function goAsync() {
 	// if (hardInjection) {
 	// 	sceneWelcome(true, helper.flags)
 	// }
+	firstRun.clear()
+
+	if (!welcome && !capitulo && !character) {
+		!firstRun() ? sceneChooser(zumba) : firstRun.clear()
+	}
+
+	firstRun() ? sceneFirstRun(clear) : null
+
 	if (welcome) {
 		return sceneWelcome(clear, helper.flags)
 	}
@@ -50,8 +66,6 @@ async function goAsync() {
 			characterBirthplace
 		)
 	}
-	sceneChooser(zumba)
-
 	// if (zumba) {
 	// 	sceneChooser(zumba)
 	// 	// console.log('choise')

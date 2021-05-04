@@ -551,13 +551,13 @@ var term = require('terminal-kit').terminal
 const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacters) => {
 	term.clear()
 
-	term.on('key', function (name, matches, data) {
-		// console.log("'key' event:", name)
-		if (name === 'CTRL_C') {
-			term.green('\nCTRL-C received...\n')
-			process.exit()
-		}
-	})
+	// term.on('key', function (name, matches, data) {
+	// 	// console.log("'key' event:", name)
+	// 	if (name === 'CTRL_C') {
+	// 		term.green('\nCTRL-C received...\n')
+	// 		process.exit()
+	// 	}
+	// })
 
 	var items = ['Welcome', 'Personagem', 'Capítulos', 'Tarefa', 'Ferramentas', 'Ajuda']
 
@@ -698,9 +698,9 @@ Você escolheu: Ajuda
 			// case 'RIGHT':
 			// 	term.right(1)
 			// 	break
-			case 'CTRL_C':
-				process.exit()
-				break
+			// case 'CTRL_C':
+			// process.exit()
+			// break
 			default:
 				// Echo anything else
 				term.noFormat(Buffer.isBuffer(data.code) ? data.code : String.fromCharCode(data.code))

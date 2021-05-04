@@ -4,7 +4,7 @@ const {tabChapterConstructor} = require('./tabChapterConstructor-container')
 const {tabNextConstructor} = require('./tabNextConstructor-container')
 const {tabRangeConstructor} = require('./tabRangeConstructor-container')
 const {tabLatestConstructor} = require('./tabLatestConstructor-container')
-const {tabFistConstructor} = require('./tabFisrtConstructor-container')
+const {tabFirstConstructor} = require('./tabFirstConstructor-container')
 
 const constructorTabChapter = (tab, chapter, page, qtdRow, first, next, rangeBegin, latest) => {
 	// lidando com plural para texto 'Total Final'
@@ -52,7 +52,15 @@ const constructorTabChapter = (tab, chapter, page, qtdRow, first, next, rangeBeg
 				}
 				if (first) {
 					// caso flag first
-					tabFistConstructor(page, splitText, maybePluralize, totalFinal, config, totalRows, qtdRow)
+					tabFirstConstructor(
+						page,
+						splitText,
+						maybePluralize,
+						totalFinal,
+						config,
+						totalRows,
+						qtdRow
+					)
 				}
 			}
 

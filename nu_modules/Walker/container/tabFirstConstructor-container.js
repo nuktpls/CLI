@@ -1,5 +1,5 @@
 const {dim} = require('chalk')
-const tabFistConstructor = (
+const tabFirstConstructor = (
 	page,
 	splitText,
 	maybePluralize,
@@ -21,5 +21,5 @@ const tabFistConstructor = (
 }
 
 module.exports = {
-	tabFistConstructor
+	tabFirstConstructor
 }
