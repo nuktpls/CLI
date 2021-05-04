@@ -39,7 +39,7 @@ async function goAsync() {
 	// if (hardInjection) {
 	// 	sceneWelcome(true, helper.flags)
 	// }
-	firstRun.clear()
+	// firstRun.clear()
 
 	if (!welcome && !capitulo && !character) {
 		!firstRun() ? sceneChooser(zumba) : firstRun.clear()

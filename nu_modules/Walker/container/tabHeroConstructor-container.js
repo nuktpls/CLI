@@ -5,6 +5,6 @@ const heroConstructor = heroConstructorScene => {
 		clearConsole()
 		thisConstructorScene(0)
 		console.log(1)
-	}, 1000)
+	}, 2000)
 }
 module.exports = {heroConstructor}

@@ -12,6 +12,6 @@ const welcomeScreenContainer = () => {
 
 	setTimeout(() => {
 		clearInterval(frameGoOne)
-	}, 1000)
+	}, 2000)
 }
 module.exports = {welcomeScreenContainer}
