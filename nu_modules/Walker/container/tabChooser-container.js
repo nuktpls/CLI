@@ -659,7 +659,7 @@ Você escolheu: Ajuda
 			`)
 			}
 
-			menuRegistry()
+			// menuRegistry()
 		})
 
 	menuRegistry()
