@@ -3,7 +3,7 @@ const dotenv = require('dotenv')
 const fs = require('fs')
 const clearConsole = require('clear-any-console')
 // const {heroConstructor} = require('./tabHeroConstructor-container')
-const {green} = require('chalk')
+const { green } = require('chalk')
 // //  appendFileSync
 const firstRun = require('first-run')
 
@@ -79,12 +79,12 @@ const chooseCustom = this__Scene => {
 						fs.appendFileSync(filename, recordHeroTermnAo, 'utf-8')
 
 						term.cyan('Cidade natal: [')
-						term.yellow('Fernadatown, Enzotown')
+						term.yellow('Fernadatown, Enzocity')
 						term.cyan(']\n')
 						term.green('Exemplo: ')
 						term.cyan('(...) nos subúrbios de ')
 						term.yellow('Miltown.')
-						term.dim(' // Use final com town')
+						term.dim(' // Use final com town ou city')
 						term.green('\nEscreva: ')
 
 						term.inputField({}, function (error, input) {
@@ -135,8 +135,8 @@ Sou maneirinh${green(heroTermn)}!
 								if (response.selectedIndex === 0) {
 									// chooseMiltinho()
 									clearConsole()
-									term.cyan(`Olá ${heroName}. Você já pode iniciar o sistema.\n`)
-									term.green(`\nDigite "nuktpls" e seja bem-vind${heroTermn}\n\n`)
+									term.cyan(`Você já pode iniciar o sistema.\n`)
+									term.green(`\nDigite "nuktpls" e seja bem-vind${heroTermn}!\n\n`)
 									process.exit()
 								}
 								if (response.selectedIndex === 1) {
@@ -167,4 +167,4 @@ Sou maneirinh${green(heroTermn)}!
 	//
 	// process.exit()
 }
-module.exports = {chooseCustom}
+module.exports = { chooseCustom }

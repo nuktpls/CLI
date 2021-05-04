@@ -8,19 +8,14 @@ const nuTEIASabre = `
 🕸 <TE[i]AS>>>
 `
 const nuMESSAGE = `
-	Capítulo 01 - O Sangue
-	Capítulo 02 - Brasil, 2005 do ano comum
-	Capítulo 03 - Lua, a Famosa Hacker
-	Capítulo 04 - Nova São Paulo
-	Capítulo 05 - Show do Esquadrão
-	Capítulo 06 - Vielas e Becos
-	Capítulo 07 - Pagode do Esquadrão
-	Capítulo 08 - Esquadrão Voltou
-	Capítulo 09 - A Pedra da Lua
-	Capítulo 10 - A Canção do Herói
-	Capítulo 11 - Celeste, a Deusa
-	Capítulo 12 - No Rastro do Herói
-	Capítulo 13 - Agradecimentos
+	Eugenia 3.0 - As Crianças CTO's - Volume I
+
+	Escrito por Milton Bolonha
+	Primeira Edição - Brasil
+	Editora Siedler
+	2021
+
+	Todos os direitos reservados
 `
 const nuMESSAGElinks = `
 🐦 Twitter: https://twitter.com/nuktpls

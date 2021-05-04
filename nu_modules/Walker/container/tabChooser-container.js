@@ -1,11 +1,11 @@
-var term = require('terminal-kit').terminal
+const term = require('terminal-kit').terminal
+const { deviceChapter } = require('./deviceChapter-container')
 const firstRun = require('first-run')
 
-var term = require('terminal-kit').terminal
-const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacters) => {
-	term.clear()
 
-	var items = ['Sumário', 'Personagem', 'Capítulos', 'Ajuda', 'Reset']
+const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacters, sceneChapter) => {
+	term.clear()
+	var items = ['Introdução', 'Personagem', 'Capítulo', 'Reset']
 
 	var options = {
 		y: 1, // the menu will be on the top of the terminal
@@ -19,9 +19,9 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacter
 			if (colorMenuHack) {
 				options.style = colorMenuHack
 			}
-			if (response.selectedText === 'Sumário') {
+			if (response.selectedText === 'Introdução') {
 				setTimeout(() => {
-					laFunc(tabMULTIPLEarrays(), true, [{welcome: true}])
+					laFunc(tabMULTIPLEarrays(), true, [{ welcome: true }])
 					return process.exit()
 				}, 10)
 
@@ -29,19 +29,11 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacter
 			if (response.selectedText === 'Personagem') {
 				term.clear()
 
-				term.cyan('\n\nSelecione o personagem para ler o seu resumo.\n')
+				term.cyan('Selecione o personagem para ler o seu resumo.\n')
 
 				var items = ['a. Herói Vagabundo', 'b. Ditadora Facista', 'c. @goshDev', 'd. Boi Sonoro']
 
 				term.singleColumnMenu(items, function (error, response) {
-					// term('\n').eraseLineAfter.green(
-					// 	'#%s selected: %s (%s,%s)\n',
-					// 	response.selectedIndex,
-					// 	response.selectedText,
-					// 	response.x,
-					// 	response.y
-					// )
-					// console.log(`Você escolheu: Personagem ${response.selectedText}`)
 					if (response.selectedIndex === 0) {
 						term.clear()
 						lesCaras(tabCharacters, 'heroiVagabundo')
@@ -64,23 +56,19 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacter
 					}
 				})
 			}
-			if (response.selectedText === 'Capítulos') {
+			if (response.selectedText === 'Capítulo') {
 				term.clear()
 				console.log(`
-Você escolheu: Capítulos
+Você escolheu: Capítulo
 			`)
-			}
-			if (response.selectedText === 'Ajuda') {
-				term.clear()
-				console.log(`
-Você escolheu: Ajuda
-			`)
+				deviceChapter(sceneChapter, 1)
+				// process.exit()
 			}
 
 			if (response.selectedText === 'Reset') {
 				term.clear()
-	firstRun.clear()
-				
+				firstRun.clear()
+
 				term.red(`O seu herói foi deletado.\n\n`)
 				term.green(`\nDigite "nuktpls" e configure o sistema.\n\n`)
 				process.exit()
@@ -91,7 +79,7 @@ Você escolheu: Ajuda
 
 	menuRegistry()
 
-	term.grabInput({mouse: 'button', focus: true})
+	term.grabInput({ mouse: 'button', focus: true })
 
 	term.on('key', function (key, matches, data) {
 		switch (key) {
@@ -120,7 +108,7 @@ Você escolheu: Ajuda
 	})
 
 	// term.grabInput({mouse: 'button'})
-	const {yellow, cyan, blue, red, green, dim} = require('chalk')
+	const { yellow, cyan, blue, red, green, dim } = require('chalk')
 
 	console.log(`
 
@@ -132,4 +120,4 @@ Você escolheu: Ajuda
 	term.setCursorColorRgb(r, g, b)
 }
 
-module.exports = {constructorTabChooser}
+module.exports = { constructorTabChooser }

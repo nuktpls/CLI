@@ -1,5 +1,5 @@
-const {tabChapter} = require('../components/tabChapter')
-const {labelTabChapter} = require('../components/labelTabChapter')
+const { tabChapter } = require('../components/tabChapter')
+const { labelTabChapter } = require('../components/labelTabChapter')
 
 const tabChapterConstructor = (page, qtdRow, totalRows, maybePluralize, totalFinal, splitText) => {
 	let countLine = 0

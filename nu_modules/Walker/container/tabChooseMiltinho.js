@@ -1,9 +1,13 @@
 const dotenv = require('dotenv')
 const fs = require('fs')
 const term = require('terminal-kit').terminal
+var resolvePath = require('resolve-path')
+
 const clearConsole = require('clear-any-console')
 const chooseMiltinho = () => {
-	const file = dotenv.parse(fs.readFileSync('./.env.staging'))
+	    var fullpath = resolvePath('./', '.env.staging')
+
+	const file = dotenv.parse(fs.readFileSync(fullpath))
 	const dataInsert = `HERO_NAME=${file.HERO_NAME}
 HERO_HE=${file.HERO_HE}
 HERO_A=${file.HERO_A}
@@ -19,7 +23,7 @@ HERO_INIT_NAME=${file.HERO_INIT_NAME}`
 	const heroName = fileFinal.HERO_NAME
 	const heroTermn = fileFinal.HERO_TERMN
 	clearConsole()
-	term.cyan(`Olá ${heroName}. Você já pode iniciar o sistema.\n`)
+	term.cyan(`Você já pode iniciar o sistema.\n`)
 	term.green(`\nDigite "nuktpls" e seja bem-vind${heroTermn}!\n\n`)
 
 	process.exit()
