@@ -24,7 +24,7 @@ const {
 	capituloTreze
 } = require('../../../data/index')
 // const {capituloDois} = require('../../../data/capituloDois')
-const { heroiVagabundo, goshDev, boiSonoro, ditadoraFacista } = require('../../../data/character')
+const { heroiVagabundo, goshDev, boiSonoro, ditadoraFacista, heroResume } = require('../../../data/character')
 
 const tabMULTIPLEarrays = () => {
 	return [
@@ -198,6 +198,15 @@ const tabCharacters = () => {
 			agent: 'characters',
 			subAgent: 'goshDev',
 			msg: goshDev,
+			style: {
+				color: '#dd3'
+			},
+			clear: 2
+		}),
+		pimpMyCli({
+			agent: 'characters',
+			subAgent: 'heroResume',
+			msg: heroResume,
 			style: {
 				color: '#dd3'
 			},

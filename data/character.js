@@ -1,4 +1,16 @@
-const {yellow, red, green, cyan} = require('chalk')
+const {
+  yellow,
+  cyan,
+  blue,
+  red,
+  green,
+  heroName,
+  heroCity,
+  heroTermn,
+  heroA,
+  heroTermnAO
+} = require('./dependencies')
+// const {yellow, red, green, cyan} = require('chalk')
 const heroiVagabundo = `${yellow.bold.underline('Herói Vagabundo')}
 
 ${yellow('Nome:')} 			Herói Vagabundo
@@ -54,5 +66,38 @@ ${cyan('Local de nascimento:')} 	Fora do Tártaro
 ${cyan.bold('Resumo')}
 @goshDev entrou no Brasil na versão 3.0.
 `
+function gender(heroA) {
+  if (!heroA) {
+    return
+  }
+  if (heroA === 'um') {
+    return 'Masculino'
+  }
+  if (heroA === 'uma') {
+    return 'Feminino'
+  }
+  if (heroA === '@') {
+    return 'Sem gênero'
+  }
+  if (heroA !== 'um' && heroA !== 'uma') {
+    return 'Gênero diverso'
+  }
+}
+const heroResume = `${green.bold.underline(heroName)}
+		
+${green('Nome:')} 			${heroName}
+${green('Gênero:')} 		${gender(heroA)}
+${green('Idade:')} 			13 anos
+${green('Versões:')} 		Brasil beta 2.0.X.X; Brasil 3.0
+${green('Nascimento:')} 		18/08/20XX
+${green('Local de nascimento:')} 	${heroCity}
 
-module.exports = {heroiVagabundo, ditadoraFacista, boiSonoro, goshDev}
+${green.bold('Resumo')}
+${heroTermn.toUpperCase()} pequen${heroTermn} ${heroName} vive nos subúrbios de ${heroCity}.
+Irm${heroTermnAO} do Menor Vagabundo que é um baterista e dos mais 
+habilidosos soldados do Esquadrão Vagabundo.
+
+`
+
+
+module.exports = { heroiVagabundo, ditadoraFacista, boiSonoro, goshDev, heroResume }

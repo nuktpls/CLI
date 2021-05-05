@@ -1,6 +1,11 @@
 const term = require('terminal-kit').terminal
 const { deviceChapter } = require('./deviceChapter-container')
 const firstRun = require('first-run')
+const dotenv = require('dotenv')
+const fs = require('fs')
+var path = require('path');
+const appRoot = require('app-root-path');
+
 
 
 const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacters, sceneChapter) => {
@@ -30,8 +35,10 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacter
 				term.clear()
 
 				term.cyan('Selecione o personagem para ler o seu resumo.\n')
-
-				var items = ['a. Herói Vagabundo', 'b. Ditadora Facista', 'c. @goshDev', 'd. Boi Sonoro']
+				const filename = path.resolve(`${appRoot}/.env`)
+				const fileFinal = dotenv.parse(fs.readFileSync(filename))
+				const heroTermn = fileFinal.HERO_NAME
+				var items = ['a. Herói Vagabundo', 'b. Ditadora Facista', 'c. @goshDev', 'd. Boi Sonoro', 'e. ' + heroTermn]
 
 				term.singleColumnMenu(items, function (error, response) {
 					if (response.selectedIndex === 0) {
@@ -52,6 +59,11 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacter
 					if (response.selectedIndex === 3) {
 						term.clear()
 						lesCaras(tabCharacters, 'boiSonoro')
+						process.exit()
+					}
+					if (response.selectedIndex === 4) {
+						term.clear()
+						lesCaras(tabCharacters, 'heroResume')
 						process.exit()
 					}
 				})
