@@ -1,6 +1,6 @@
 {
   "name": "nuktpls-cli",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "bin": {
     "nuktpls": "index.js"
   },
@@ -29,6 +29,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "app-root-path": "^3.0.0",
     "chalk": "^4.1.0",
     "clear-any-console": "^1.16.2",
     "cli-table3": "^0.6.0",
