@@ -4,23 +4,24 @@ const term = require('terminal-kit').terminal
 var path = require('path');
 const appRoot = require('app-root-path');
 
+const { miltinho } = require('../config/miltinho')
 const clearConsole = require('clear-any-console')
 const chooseMiltinho = () => {
 	// return console.log(appRoot)
-	var fullpath = path.resolve(`${appRoot}/node_modules/nuktpls-cli/.env.staging`)
-	console.log(fullpath)
+	// var fullpath = path.resolve(`${appRoot}/node_modules/nuktpls-cli/.env.staging`)
+	// console.log(fullpath)
 
-	const file = dotenv.parse(fs.readFileSync(fullpath))
-	const dataInsert = `HERO_NAME=${file.HERO_NAME}
-HERO_HE=${file.HERO_HE}
-HERO_A=${file.HERO_A}
-HERO_TERMN=${file.HERO_TERMN}
-HERO_TERMN_AO=${file.HERO_TERMN_AO}
-HERO_INIT_NAME=${file.HERO_INIT_NAME}`
-
-	const filename = path.resolve(`${appRoot}/node_modules/nuktpls-cli/.env`)
+	const dataInsert = `HERO_NAME=${miltinho.HERO_NAME}
+HERO_HE=${miltinho.HERO_HE}
+HERO_A=${miltinho.HERO_A}
+HERO_TERMN=${miltinho.HERO_TERMN}
+HERO_TERMN_AO=${miltinho.HERO_TERMN_AO}
+HERO_INIT_NAME=${miltinho.HERO_INIT_NAME}`
+	console.log(dataInsert)
+	const filename = path.resolve(`${appRoot}/.env`)
 	console.log(path.resolve(filename))
 	//  appendFileSync
+	// process.exit()
 	fs.writeFileSync(filename, dataInsert, 'utf-8')
 	const fileFinal = dotenv.parse(fs.readFileSync(filename))
 
