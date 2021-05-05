@@ -24,7 +24,7 @@ const {
 	capituloTreze
 } = require('../../../data/index')
 // const {capituloDois} = require('../../../data/capituloDois')
-const {heroiVagabundo, goshDev, boiSonoro, ditadoraFacista} = require('../../../data/character')
+const { heroiVagabundo, goshDev, boiSonoro, ditadoraFacista } = require('../../../data/character')
 
 const tabMULTIPLEarrays = () => {
 	return [
@@ -73,7 +73,7 @@ const tabMULTIPLEarrays = () => {
 				`
 			`,
 			style: {
-				color: '#0000FF'
+				color: '#008eee'
 			}
 		})
 	]
