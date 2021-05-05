@@ -15,7 +15,6 @@ if (firstRun()) {
 	}
 	firstRun.clear()
 }
-
 const {goAsync, clearAll} = require('./Cli/container/cli-container')
 
 if (clearAll) {
