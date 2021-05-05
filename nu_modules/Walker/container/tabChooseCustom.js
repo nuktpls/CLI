@@ -100,7 +100,7 @@ const chooseCustom = this__Scene => {
 							clearConsole()
 							term.cyan(`Leia e confirme que as frases abaixo estão corretas.
 							`)
-							const file = dotenv.parse(fs.readFileSync('./.env'))
+							const file = dotenv.parse(fs.readFileSync(filename))
 
 							const heroName = file.HERO_NAME
 							const heroHe = file.HERO_HE
