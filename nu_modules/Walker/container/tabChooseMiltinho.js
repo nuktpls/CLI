@@ -1,4 +1,4 @@
-const dotenv = require('dotenv').config()
+const dotenv = require('dotenv')
 const fs = require('fs')
 const term = require('terminal-kit').terminal
 var path = require('path');
@@ -19,13 +19,20 @@ HERO_TERMN_AO=${miltinho.HERO_TERMN_AO}
 HERO_INIT_NAME=${miltinho.HERO_INIT_NAME}`
 	console.log(dataInsert)
 	const filename = path.resolve(`${appRoot}/.env`)
-	console.log(path.resolve(filename))
+	// console.log(filename)
 	//  appendFileSync
 	// process.exit()
 	fs.writeFileSync(filename, dataInsert, 'utf-8')
-	const fileFinal = dotenv.parse(fs.readFileSync(filename))
 
-	const heroName = fileFinal.HERO_NAME
+
+	const fileFinal = dotenv.parse(fs.readFileSync(filename))
+	// const fileFinal = dotenv.parse(filename)
+
+	// console.log('fileFinal:>>>')
+	// console.log(fileFinal)
+	// const heroName = process.env.HERO_NAME
+	// console.log(heroName)
+	// process.exit()
 	const heroTermn = fileFinal.HERO_TERMN
 	clearConsole()
 	term.cyan(`Você já pode iniciar o sistema.\n`)

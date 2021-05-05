@@ -1,4 +1,4 @@
-const {heroName, yellow, cyan, blue, red, green, heroHe, heroTermn} = require('../dependencies')
+const { heroName, yellow, cyan, blue, red, green, heroHe, heroTermn } = require('../dependencies')
 const capituloOnze = `
 ${cyan('Celeste, a Deusa')}
 
@@ -49,7 +49,7 @@ ${green('<' + heroName + '>')}Lua, agora eu vou te matar de verdade. O que foi
 que você fez comigo?
 ${cyan('<Lua>')}Olha, você pode falar. É tão ruim assim? Me desculpa.
 ${green('<' + heroName + '>')}Claro que é ruim. Eu virei, isso.
-${yellow('<Narração>')}Lua pega ${heroName},está em volto às
+${yellow('<Narração>')}Lua pega ${heroName}, ${heroHe} está em volto às
 suas roupas e ao fazer isso  ${heroHe} volta ao normal.
 ${cyan('<Lua>')}Você voltou.
 ${green('<' + heroName + '>')}Eu não sei se quero esse poder. Que poder é
@@ -107,4 +107,4 @@ entra na rede elétrica e parte em uma rajada de eletricidade
 com um rastro de blackout deixado na sua partida.
 `
 
-module.exports = {capituloOnze}
+module.exports = { capituloOnze }
