@@ -8,12 +8,9 @@ const { green } = require('chalk')
 const firstRun = require('first-run')
 
 const chooseCustom = this__Scene => {
-	const filename = './.env'
+	const filename = path.resolve(`${appRoot}/.env`)
 	clearConsole()
-	fs.writeFileSync(filename, '', 'utf-8', function (err) {
-		if (err) return console.log(err)
-		console.log(`${''} > ${filename}`)
-	})
+	fs.writeFileSync(filename, '', 'utf-8')
 	term.cyan('Qual é o nome desse seu herói? ')
 	term.green('\nEscreva: ')
 	term.inputField({}, function (error, input) {
