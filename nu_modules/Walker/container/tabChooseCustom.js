@@ -1,5 +1,5 @@
 const term = require('terminal-kit').terminal
-const dotenv = require('dotenv').config()
+const dotenv = require('dotenv')
 const fs = require('fs')
 const clearConsole = require('clear-any-console')
 // const {heroConstructor} = require('./tabHeroConstructor-container')
