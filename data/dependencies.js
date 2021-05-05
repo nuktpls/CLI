@@ -2,22 +2,18 @@ const dotenv = require('dotenv')
 var path = require('path')
 const fs = require('fs')
 const appRoot = require('app-root-path')
-const firstRun = require('first-run')
 // firstRun.clear()
 
 const filename = path.resolve(`${appRoot}/.env`)
-// firstRun.clear()
-if (firstRun()) {
-	const filename = path.resolve(`${appRoot}/.env`)
-	try {
-		if (!fs.existsSync(filename)) {
-			fs.writeFileSync(filename, '', 'utf-8')
-		}
-	} catch (err) {
-		// console.error(err)
+
+try {
+	if (!fs.existsSync(filename)) {
+		fs.writeFileSync(filename, '', 'utf-8')
 	}
-	firstRun.clear()
+} catch (err) {
+	// console.error(err)
 }
+
 const file = dotenv.parse(fs.readFileSync(filename))
 const {miltinho} = require('../nu_modules/Walker/config/miltinho')
 
