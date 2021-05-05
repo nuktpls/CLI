@@ -7,7 +7,8 @@ const appRoot = require('app-root-path');
 const clearConsole = require('clear-any-console')
 const chooseMiltinho = () => {
 	// return console.log(appRoot)
-	var fullpath = path.resolve(`${appRoot}/.env.staging`)
+	var fullpath = path.resolve(`${appRoot}/node_modules/nuktpls-cli/.env.staging`)
+	console.log(fullpath)
 
 	const file = dotenv.parse(fs.readFileSync(fullpath))
 	const dataInsert = `HERO_NAME=${file.HERO_NAME}
@@ -17,7 +18,7 @@ HERO_TERMN=${file.HERO_TERMN}
 HERO_TERMN_AO=${file.HERO_TERMN_AO}
 HERO_INIT_NAME=${file.HERO_INIT_NAME}`
 
-	const filename = path.resolve(`${appRoot}/.env`)
+	const filename = path.resolve(`${appRoot}/node_modules/nuktpls-cli/.env`)
 	console.log(path.resolve(filename))
 	//  appendFileSync
 	fs.writeFileSync(filename, dataInsert, 'utf-8')
