@@ -1,10 +1,14 @@
 const fs = require('fs')
+var path = require('path')
 
 const term = require('terminal-kit').terminal
 const { readDir } = require('../../Fs')
 
 function sceneGlossary(method) {
-  const glossaryTermsFiles = readDir('./data/glossary')
+  // const glossaryTermsFiles = readDir('./')
+  const glossaryTermsFiles = fs.readdirSync(path.resolve('./data/glossary', './'))
+  // console.log(glossaryTermsFiles)
+  // process.exit()
   let arrayItems = []
   let arrayTitles = []
   glossaryTermsFiles.map((termFile) => {
