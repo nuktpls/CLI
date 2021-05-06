@@ -6,8 +6,11 @@ const { readDir } = require('../../Fs')
 
 function sceneGlossary(method) {
   // const glossaryTermsFiles = readDir('./')
-  const glossaryTermsFiles = fs.readdirSync(path.resolve('./data/glossary', './'))
-  // console.log(glossaryTermsFiles)
+  const dataDir = path.resolve(__dirname, '../../../data/glossary')
+  const glossaryTermsFiles = fs.readdirSync(dataDir)
+  // console.log(process.chdir('./'))
+  // console.log()
+  // process.cwd()
   // process.exit()
   let arrayItems = []
   let arrayTitles = []

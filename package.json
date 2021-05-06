@@ -34,6 +34,7 @@
     "clear-any-console": "^1.16.2",
     "dotenv": "^8.2.0",
     "first-run": "^2.0.0",
+    "fs-extra": "^10.0.0",
     "log-symbols": "^4.1.0",
     "log-update": "^4.0.0",
     "meow": "^9.0.0",
