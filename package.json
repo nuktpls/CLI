@@ -1,6 +1,6 @@
 {
   "name": "nuktpls-cli",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "bin": {
     "nuktpls": "index.js"
   },

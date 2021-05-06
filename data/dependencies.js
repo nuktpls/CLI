@@ -3,9 +3,9 @@ var path = require('path')
 const appRoot = require('app-root-path')
 const { checkEnvExist, readEnv } = require('../nu_modules/Fs/index')
 
-checkEnvExist()
 
 const filename = path.resolve(`${appRoot}/.env`)
+checkEnvExist(filename)
 const file = readEnv(filename)
 
 const { miltinho } = require('../nu_modules/Walker/config/miltinho')

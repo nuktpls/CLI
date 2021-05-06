@@ -77,10 +77,8 @@ Você escolheu: Capítulo
 			}
 			if (response.selectedText === 'Glossário') {
 				term.clear()
-				console.log(`
-Você escolheu: Glossário
-			`)
-				deviceGlossary(sceneChapter, 1)
+				term.cyan(`Selecione o termo para ler a sua descrição.\n`)
+				deviceGlossary()
 				// process.exit()
 			}
 
