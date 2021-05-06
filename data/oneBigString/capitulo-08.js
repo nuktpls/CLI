@@ -179,7 +179,7 @@ ${green('<' + heroName + '>')}Eu não. Bem, já fiz umas missões e fui ordenad$
 mas não exerço.
 ${yellow('<RastaVagabundo>')}Tá aí, tudo o que precisamos. A profecia
 se cumpriu. ${heroName} ${heroA} portador${heroTermn !== 'o' ? heroTermn : ''} do sacerdócio.
-${green('<' + heroName + '>')}Não, não. Eu não sou mais um sacerdote.
+${green('<' + heroName + '>')}Não, não. Eu não sou mais portador${heroA} do sacerdócio não.
 Nunca mais ministrei na vida.
 ${yellow('<AmareloVagabundo>')}Sem chances de ${heroHe} não vai saber
 ler códigos antigos, ainda mais códigos tão avançados
@@ -189,4 +189,4 @@ ${green('<' + heroName + '>')}Tô com fome.
 ${yellow('<Narração>')}Olhares se cruzam. Há tensão no ar.
 `
 
-module.exports = {capituloOito}
+module.exports = { capituloOito }

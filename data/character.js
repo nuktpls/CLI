@@ -89,13 +89,13 @@ ${green('Nome:')} 			${heroName}
 ${green('Gênero:')} 		${gender(heroA)}
 ${green('Idade:')} 			13 anos
 ${green('Versões:')} 		Brasil beta 2.0.X.X; Brasil 3.0
-${green('Nascimento:')} 		18/08/20XX
+${green('Nascimento:')} 		18/02/20XX
 ${green('Local de nascimento:')} 	${heroCity}
 
 ${green.bold('Resumo')}
 ${heroTermn.toUpperCase()} pequen${heroTermn} ${heroName} vive nos subúrbios de ${heroCity}.
-Irm${heroTermnAO} do Menor Vagabundo que é um baterista e dos mais 
-habilidosos soldados do Esquadrão Vagabundo.
+Irm${heroTermnAO} do Menor Vagabundo que é o baterista e um dos mais habilidosos 
+soldados do Esquadrão Vagabundo.
 
 `
 
