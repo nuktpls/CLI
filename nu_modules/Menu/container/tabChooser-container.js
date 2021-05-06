@@ -1,16 +1,15 @@
 const term = require('terminal-kit').terminal
-const { deviceChapter } = require('./deviceChapter-container')
+const { deviceChapter } = require('../../Walker/container/deviceChapter-container')
+const { deviceGlossary } = require('../../Menu/container/deviceGlossary')
 const firstRun = require('first-run')
 const dotenv = require('dotenv')
 const fs = require('fs')
 var path = require('path');
 const appRoot = require('app-root-path');
-
-
+const { items } = require('../config')
 
 const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacters, sceneChapter) => {
 	term.clear()
-	var items = ['Introdução', 'Personagem', 'Capítulo', 'Reset']
 
 	var options = {
 		y: 1, // the menu will be on the top of the terminal
@@ -74,6 +73,14 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacter
 Você escolheu: Capítulo
 			`)
 				deviceChapter(sceneChapter, 1)
+				// process.exit()
+			}
+			if (response.selectedText === 'Glossário') {
+				term.clear()
+				console.log(`
+Você escolheu: Glossário
+			`)
+				deviceGlossary(sceneChapter, 1)
 				// process.exit()
 			}
 

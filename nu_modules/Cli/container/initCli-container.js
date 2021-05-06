@@ -1,16 +1,16 @@
 const firstRun = require('first-run')
 
-const {constructorFirstRun} = require('../../Walker/container/tabFirstRun-container')
-const {constructorTabMultipleArrays} = require('../../Walker/container/tabMultipleArrays-container')
-const {constructorTabCharacter} = require('../../Walker/container/tabCharacter-container')
-const {constructorTabChapter} = require('../../Walker/container/tabChapter-container')
-const {constructorTabChooser} = require('../../Walker/container/tabChooser-container')
+const { constructorFirstRun } = require('../../Walker/container/tabFirstRun-container')
+const { constructorTabMultipleArrays } = require('../../Walker/container/tabMultipleArrays-container')
+const { constructorTabCharacter } = require('../../Walker/container/tabCharacter-container')
+const { constructorTabChapter } = require('../../Walker/container/tabChapter-container')
+const { constructorTabChooser } = require('../../Menu/container/tabChooser-container')
+const { constructorTabGlossary } = require('../../Menu/container/deviceGlossary')
+const { config } = require('../../PimpMyCli/config/index')
 
-const {config} = require('../../PimpMyCli/config/index')
-
-const {tabMULTIPLEarrays} = config.tabs || null
-const {tabChapters} = config.tabs || null
-const {tabCharacters} = config.tabs || null
+const { tabMULTIPLEarrays } = config.tabs || null
+const { tabChapters } = config.tabs || null
+const { tabCharacters } = config.tabs || null
 
 const sceneFirstRun = clearTab => {
 	firstRun.clear()
@@ -49,10 +49,19 @@ const sceneChooser = () => {
 	return constructorTabChooser(laFunc, tabMULTIPLEarrays, lesCaras, tabCharacters(), sceneChapter)
 }
 
+const sceneGlossary = (
+	glossaryTerm
+) => {
+	return constructorTabGlossary(
+		glossaryTerm
+	)
+}
+
 module.exports = {
 	sceneWelcome,
 	sceneChapter,
 	sceneCharacter,
 	sceneChooser,
+	sceneGlossary,
 	sceneFirstRun
 }
