@@ -1,14 +1,20 @@
 const term = require('terminal-kit').terminal
-const { deviceChapter } = require('../../Walker/container/deviceChapter-container')
-const { deviceGlossary } = require('../../Menu/container/deviceGlossary')
+const {deviceChapter} = require('../../Walker/container/deviceChapter-container')
+const {deviceGlossary} = require('../../Menu/container/deviceGlossary')
 const firstRun = require('first-run')
 const dotenv = require('dotenv')
 const fs = require('fs')
-var path = require('path');
-const appRoot = require('app-root-path');
-const { items } = require('../config')
+var path = require('path')
+const appRoot = require('app-root-path')
+const {items} = require('../config')
 
-const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacters, sceneChapter) => {
+const constructorTabChooser = (
+	laFunc,
+	tabMULTIPLEarrays,
+	lesCaras,
+	tabCharacters,
+	sceneChapter
+) => {
 	term.clear()
 
 	var options = {
@@ -25,10 +31,9 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacter
 			}
 			if (response.selectedText === 'Introdução') {
 				setTimeout(() => {
-					laFunc(tabMULTIPLEarrays(), true, [{ welcome: true }])
+					laFunc(tabMULTIPLEarrays(), true, [{welcome: true}])
 					return process.exit()
 				}, 10)
-
 			}
 			if (response.selectedText === 'Personagem') {
 				term.clear()
@@ -37,7 +42,13 @@ const constructorTabChooser = (laFunc, tabMULTIPLEarrays, lesCaras, tabCharacter
 				const filename = path.resolve(`${appRoot}/.env`)
 				const fileFinal = dotenv.parse(fs.readFileSync(filename))
 				const heroTermn = fileFinal.HERO_NAME
-				var items = ['a. Herói Vagabundo', 'b. Ditadora Facista', 'c. @goshDev', 'd. Boi Sonoro', 'e. ' + heroTermn]
+				var items = [
+					'a. Herói Vagabundo',
+					'b. Ditadora Facista',
+					'c. @goshDev',
+					'd. Boi Sonoro',
+					'e. ' + heroTermn
+				]
 
 				term.singleColumnMenu(items, function (error, response) {
 					if (response.selectedIndex === 0) {
@@ -75,9 +86,27 @@ Você escolheu: Capítulo
 				deviceChapter(sceneChapter, 1)
 				// process.exit()
 			}
+			if (response.selectedText === 'Aula') {
+				term.clear()
+				term.cyan(`Aula
+
+				`)
+				// deviceGlossary()
+				const items = [
+					'Aula 01 - Introdução ao Caminho da Luz',
+					'Aula 02 - Propedêuticas às Cartas, Projeção e Malha Geométrica',
+					'Aula 03 - Introdução ao Ensino de Tecnologia da Informação',
+					'Aula 04 - Introdução ao Ensino de Tecnologia da Informação',
+					'Aula 05 - Introdução ao Ensino de Tecnologia da Informação'
+				]
+				term.singleColumnMenu(items, function (error, response) {})
+				// process.exit()
+			}
 			if (response.selectedText === 'Glossário') {
 				term.clear()
-				term.cyan(`Selecione o termo para ler a sua descrição.\n`)
+				term.cyan(`Selecione o termo para ler a sua descrição.
+
+				`)
 				deviceGlossary()
 				// process.exit()
 			}
@@ -96,7 +125,7 @@ Você escolheu: Capítulo
 
 	menuRegistry()
 
-	term.grabInput({ mouse: 'button', focus: true })
+	term.grabInput({mouse: 'button', focus: true})
 
 	term.on('key', function (key, matches, data) {
 		switch (key) {
@@ -125,7 +154,7 @@ Você escolheu: Capítulo
 	})
 
 	// term.grabInput({mouse: 'button'})
-	const { yellow, cyan, blue, red, green, dim } = require('chalk')
+	const {yellow, cyan, blue, red, green, dim} = require('chalk')
 
 	console.log(`
 
@@ -137,4 +166,4 @@ Você escolheu: Capítulo
 	term.setCursorColorRgb(r, g, b)
 }
 
-module.exports = { constructorTabChooser }
+module.exports = {constructorTabChooser}

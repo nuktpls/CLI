@@ -3,37 +3,38 @@ var path = require('path')
 const term = require('terminal-kit').terminal
 
 function sceneGlossary(method) {
-  const dataDir = path.resolve(__dirname, '../../../data/glossary')
-  const glossaryTermsFiles = fs.readdirSync(dataDir)
+	const dataDir = path.resolve(__dirname, '../../../data/glossary')
+	const glossaryTermsFiles = fs.readdirSync(dataDir)
 
-  let arrayItems = []
-  let arrayTitles = []
-  glossaryTermsFiles.map((termFile) => {
-    const contentFile = require(`../../../data/glossary/${termFile}`)
+	let arrayItems = []
+	let arrayTitles = []
+	glossaryTermsFiles.map(termFile => {
+		const contentFile = require(`../../../data/glossary/${termFile}`)
 
-    const { term } = contentFile.glossaryTerm
-    if (method === 'arrayTitles') {
-      arrayTitles.push(term)
-    }
-    if (method === 'arrayItems') {
-      arrayItems.push(contentFile)
-    }
-  })
+		const {term} = contentFile.glossaryTerm
+		if (method === 'arrayTitles') {
+			arrayTitles.push(term)
+		}
+		if (method === 'arrayItems') {
+			arrayItems.push(contentFile)
+		}
+	})
 
-  return method === 'arrayTitles' ? arrayTitles : arrayItems
+	return method === 'arrayTitles' ? arrayTitles : arrayItems
 }
 
-const deviceGlossary = (nz) => {
+const deviceGlossary = nz => {
+	const items = sceneGlossary('arrayTitles')
+	term.gridMenu(items, function (error, response) {
+		const itemsTermDesc = sceneGlossary('arrayItems')
 
-  const items = sceneGlossary('arrayTitles')
-  term.singleColumnMenu(items, function (error, response) {
-    const itemsTermDesc = sceneGlossary('arrayItems')
-
-    const termObj = itemsTermDesc.find(termObj => termObj.glossaryTerm.term === response.selectedText)
-    const { glossaryTerm } = require('../../Menu/components/glossaryTerm')
-    glossaryTerm(termObj.glossaryTerm.term, termObj.glossaryTerm.description)
-    process.exit()
-  })
+		const termObj = itemsTermDesc.find(
+			termObj => termObj.glossaryTerm.term === response.selectedText
+		)
+		const {glossaryTerm} = require('../../Menu/components/glossaryTerm')
+		glossaryTerm(termObj.glossaryTerm.term, termObj.glossaryTerm.description)
+		process.exit()
+	})
 }
 
-module.exports = { deviceGlossary }
+module.exports = {deviceGlossary}

@@ -1,2 +1,2 @@
-const items = ['Introdução', 'Personagem', 'Capítulo', 'Glossário', 'Reset']
-module.exports = { items }
+const items = ['Introdução', 'Personagem', 'Capítulo', 'Aula', 'Glossário', 'Reset']
+module.exports = {items}
