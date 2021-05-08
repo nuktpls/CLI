@@ -30,28 +30,28 @@ const constructorTabChooser = (
 			if (colorMenuHack) {
 				options.style = colorMenuHack
 			}
-			if (response.selectedText === 'Introdução') {
+			if (response.selectedText === 'Universo') {
 				setTimeout(() => {
 					laFunc(tabMULTIPLEarrays(), true, [{welcome: true}])
 					return process.exit()
 				}, 10)
 			}
-			if (response.selectedText === 'Personagem') {
+			if (response.selectedText === 'Elenco') {
 				term.clear()
 				term.cyan('Selecione o personagem para ler o seu resumo.\n\n')
 				deviceCharacter()
 			}
-			if (response.selectedText === 'Capítulo') {
+			if (response.selectedText === 'História') {
 				term.clear()
 				console.log(`
-Você escolheu: Capítulo
+Você escolheu: História
 			`)
 				deviceChapter(sceneChapter, 1)
 				// process.exit()
 			}
-			if (response.selectedText === 'Aula') {
+			if (response.selectedText === 'Mochila') {
 				term.clear()
-				term.cyan(`Aula
+				term.cyan(`Mochila
 
 				`)
 				// deviceGlossary()
