@@ -1,5 +1,5 @@
 const glossaryTerm = {
-	term: '05 - MC[o]Poupa Luz',
+	term: 'Poupa Luz',
 	description: 'Uma das três...',
 	topology: 'Miltown',
 	state: 'Projeção',

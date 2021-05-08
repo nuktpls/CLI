@@ -1,5 +1,5 @@
 const glossaryTerm = {
-	term: '00 - CP[l]Objeto',
+	term: 'Objeto',
 	description: 'Uma das três...',
 	topology: 'Carta',
 	state: 'Projeção',

@@ -1,6 +1,7 @@
 const term = require('terminal-kit').terminal
 const {deviceChapter} = require('../../Walker/container/deviceChapter-container')
 const {deviceGlossary} = require('../../Menu/container/deviceGlossary')
+const {deviceCharacter} = require('../../Menu/container/deviceCharacter-container')
 const firstRun = require('first-run')
 const dotenv = require('dotenv')
 const fs = require('fs')
@@ -37,46 +38,8 @@ const constructorTabChooser = (
 			}
 			if (response.selectedText === 'Personagem') {
 				term.clear()
-
-				term.cyan('Selecione o personagem para ler o seu resumo.\n')
-				const filename = path.resolve(`${appRoot}/.env`)
-				const fileFinal = dotenv.parse(fs.readFileSync(filename))
-				const heroTermn = fileFinal.HERO_NAME
-				var items = [
-					'a. Herói Vagabundo',
-					'b. Ditadora Facista',
-					'c. @goshDev',
-					'd. Boi Sonoro',
-					'e. ' + heroTermn
-				]
-
-				term.singleColumnMenu(items, function (error, response) {
-					if (response.selectedIndex === 0) {
-						term.clear()
-						lesCaras(tabCharacters, 'heroiVagabundo')
-						process.exit()
-					}
-					if (response.selectedIndex === 1) {
-						term.clear()
-						lesCaras(tabCharacters, 'ditadoraFacista')
-						process.exit()
-					}
-					if (response.selectedIndex === 2) {
-						term.clear()
-						lesCaras(tabCharacters, 'goshDev')
-						process.exit()
-					}
-					if (response.selectedIndex === 3) {
-						term.clear()
-						lesCaras(tabCharacters, 'boiSonoro')
-						process.exit()
-					}
-					if (response.selectedIndex === 4) {
-						term.clear()
-						lesCaras(tabCharacters, 'heroResume')
-						process.exit()
-					}
-				})
+				term.cyan('Selecione o personagem para ler o seu resumo.\n\n')
+				deviceCharacter()
 			}
 			if (response.selectedText === 'Capítulo') {
 				term.clear()
@@ -94,10 +57,8 @@ Você escolheu: Capítulo
 				// deviceGlossary()
 				const items = [
 					'Aula 01 - Introdução ao Caminho da Luz',
-					'Aula 02 - Propedêuticas às Cartas, Projeção e Malha Geométrica',
-					'Aula 03 - Introdução ao Ensino de Tecnologia da Informação',
-					'Aula 04 - Introdução ao Ensino de Tecnologia da Informação',
-					'Aula 05 - Introdução ao Ensino de Tecnologia da Informação'
+					'Aula 02 - Propedêuticas ao Código',
+					'Aula 03 - Topologias Cibernéticas'
 				]
 				term.singleColumnMenu(items, function (error, response) {})
 				// process.exit()

@@ -1,5 +1,5 @@
 const glossaryTerm = {
-	term: '00 - DE[p]Carta',
+	term: 'Carta',
 	description: 'Uma das três...',
 	topology: 'Documento',
 	state: 'Esteira',

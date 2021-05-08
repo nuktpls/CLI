@@ -1,5 +1,5 @@
 const glossaryTerm = {
-	term: '00 - CE[a]Processar',
+	term: 'Processar',
 	description: 'Uma das três...',
 	topology: 'Circuito',
 	state: 'Esteira',

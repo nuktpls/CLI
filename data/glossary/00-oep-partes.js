@@ -1,5 +1,5 @@
 const glossaryTerm = {
-	term: '00 - OE[p]Partes',
+	term: 'Partes',
 	description: 'Uma das três...',
 	topology: 'Objeto',
 	state: 'Esteira',

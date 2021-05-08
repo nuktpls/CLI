@@ -1,5 +1,5 @@
 const glossaryTerm = {
-	term: '05 - BE[p]Miltown',
+	term: 'Miltown',
 	description: 'Uma das três...',
 	topology: 'Brasil beta 2.0.X.X',
 	state: 'topology',

@@ -1,5 +1,5 @@
 const glossaryTerm = {
-	term: '03 - RL[p]Brasil Beta 2.0.X.X',
+	term: 'Brasil Beta 2.0.X.X',
 	description: 'Uma das três...',
 	topology: 'RÖÖM',
 	state: 'Local',
