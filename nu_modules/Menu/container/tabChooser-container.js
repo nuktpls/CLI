@@ -1,6 +1,6 @@
 const term = require('terminal-kit').terminal
 const {deviceChapter} = require('../../Walker/container/deviceChapter-container')
-const {deviceGlossary} = require('../../Menu/container/deviceGlossary')
+const {deviceListFrom} = require('../../Menu/container/deviceListFrom-container')
 const {deviceCharacter} = require('../../Menu/container/deviceCharacter-container')
 const firstRun = require('first-run')
 const dotenv = require('dotenv')
@@ -39,14 +39,17 @@ const constructorTabChooser = (
 			if (response.selectedText === 'Elenco') {
 				term.clear()
 				term.cyan('Selecione o personagem para ler o seu resumo.\n\n')
-				deviceCharacter()
+				// deviceCharacter()
+				deviceListFrom('character', 'singleColumnMenu')
 			}
 			if (response.selectedText === 'História') {
 				term.clear()
 				console.log(`
 Você escolheu: História
 			`)
-				deviceChapter(sceneChapter, 1)
+				// deviceChapter(sceneChapter, 1)
+				deviceListFrom('chapter', 'singleColumnMenu')
+
 				// process.exit()
 			}
 			if (response.selectedText === 'Mochila') {
@@ -68,7 +71,8 @@ Você escolheu: História
 				term.cyan(`Selecione o termo para ler a sua descrição.
 
 				`)
-				deviceGlossary()
+				deviceListFrom('glossary', 'gridMenu')
+				// deviceGlossary()
 				// process.exit()
 			}
 

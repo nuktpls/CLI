@@ -1,5 +1,5 @@
 const clearConsole = require('clear-any-console')
-const glossaryTerm = (term, desc) => {
+const tab = (term, desc) => {
 	clearConsole()
 	console.log(`
 GLOSSÁRIO - Termo ${term}
@@ -13,4 +13,4 @@ GLOSSÁRIO - Termo ${term}
 
   `)
 }
-module.exports = {glossaryTerm}
+module.exports = {tab}
